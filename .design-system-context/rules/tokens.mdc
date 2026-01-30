@@ -1,0 +1,30 @@
+---
+description: Design system tokens for colors, typography, and spacing
+globs: ["**/*.tsx", "**/*.css"]
+alwaysApply: false
+---
+
+# Design Tokens
+
+## General Rule
+**NEVER use arbitrary values** (e.g., `text-[13px]`, `p-[7px]`, `#123456`). Always use the system tokens defined below.
+
+## Color Tokens
+Reference `.design-system-context/system/tokens/colors.md` for:
+- Semantic tokens: `bg-primary`, `text-muted-foreground`, `border-border`.
+- **Primary Brand:** `#19518b` (Deep Blue).
+
+## Typography Tokens
+Reference `.design-system-context/system/tokens/typography.md` for:
+- **Font Families:** Adelle Sans (UI), Adelle Mono (Code).
+- **Scale:** `text-xs` (12px) to `text-5xl` (48px).
+- **Headings:** Use specific weights (Extrabold for H1, Semibold for H2/H3).
+
+## Spacing & Radii
+Reference `.design-system-context/system/tokens/spacing.md` and `.design-system-context/system/tokens/radii.md`:
+- **Spacing:** standard Tailwind scale (gap-2, p-4, etc).
+- **Radii:** `rounded-md` (8px) for inputs/buttons, `rounded-lg` (10px) for cards.
+
+## Elevation & Shadows
+Reference `.design-system-context/system/tokens/shadows.md`:
+- Standard shadows: `shadow-sm`, `shadow-md`, `shadow-lg`.

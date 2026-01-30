@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 2%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 263.4 70% 50.4%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 240 3.7% 10%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 12%;
+  --input: 240 3.7% 12%;
+  --ring: 263.4 70% 50.4%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: rgba(10, 10, 12, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Base Markdown Styles */
+.prose {
+  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.prose h1 {
+  color: hsl(var(--foreground));
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.04em;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.prose h2 {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid hsl(var(--border));
+  padding-bottom: 0.75rem;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.prose h3 {
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+.prose code {
+  background: hsl(var(--secondary));
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: hsl(var(--foreground));
+  font-family: ui-monospace, monospace;
+  border: 1px solid hsl(var(--border));
+}
+
+.prose pre {
+  background: #000000;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid hsl(var(--border));
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  color: #e4e4e7;
+  font-size: 0.9em;
+  border: none;
+}
+
+.prose ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.prose li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: hsl(var(--primary));
+  font-weight: 900;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2.5rem 0;
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.prose th {
+  text-align: left;
+  padding: 1rem;
+  background: hsl(var(--secondary));
+  color: hsl(var(--foreground));
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+
+.prose td {
+  padding: 1rem;
+  border-top: 1px solid hsl(var(--border));
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.prose blockquote {
+  border-left: 2px solid hsl(var(--primary));
+  padding: 1.5rem 2rem;
+  background: hsl(var(--primary) / 0.03);
+  margin: 2rem 0;
+  border-radius: 0 12px 12px 0;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
