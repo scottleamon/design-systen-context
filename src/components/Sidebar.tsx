@@ -65,19 +65,7 @@ export default async function Sidebar() {
                 ))}
             </nav>
 
-            <div className="p-6 mt-auto space-y-4">
-                <div className="p-4 bg-zinc-100 dark:bg-gradient-to-br dark:from-zinc-900 dark:to-black rounded-2xl border border-zinc-200 dark:border-white/[0.05] shadow-sm dark:shadow-2xl">
-                    <div className="flex items-center gap-3 mb-3">
-                        <div className="relative">
-                            <div className="size-2 bg-emerald-500 rounded-full" />
-                            <div className="absolute inset-0 size-2 bg-emerald-500 rounded-full animate-ping" />
-                        </div>
-                        <p className="text-[10px] text-zinc-500 uppercase font-black tracking-widest">Live Sync</p>
-                    </div>
-                    <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                        Edits to <code className="text-zinc-700 dark:text-zinc-300">.design-system-context/</code> sync instantly.
-                    </p>
-                </div>
+            <div className="p-6 mt-auto">
                 <ThemeToggle />
             </div>
         </aside>
