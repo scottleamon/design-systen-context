@@ -7,11 +7,11 @@ import {
     Rss,
     Smile,
     Home,
-    ChevronRight,
     Scale,
     Accessibility,
     ListChecks
 } from "lucide-react"
+import SidebarSection from "./SidebarSection"
 
 const iconsMap: Record<string, any> = {
     rules: BookOpen,
@@ -35,6 +35,9 @@ const categoryOrder = [
     "decisions",  // Decision documentation
     "a11y",       // Accessibility details
 ]
+
+// Categories that should be expanded by default
+const defaultOpenCategories = ["tasks", "rules"]
 
 export default async function Sidebar() {
     const hierarchy = await getDocsHierarchy()
@@ -60,7 +63,7 @@ export default async function Sidebar() {
             </div>
 
             <nav className="flex-1 overflow-y-auto px-4 py-6 scrollbar-hide">
-                <div className="space-y-1 mb-10">
+                <div className="space-y-1 mb-6">
                     <Link
                         href="/"
                         className="group flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-zinc-400 hover:text-white transition-all duration-200"
@@ -75,26 +78,13 @@ export default async function Sidebar() {
                 {categories.map((category) => {
                     const Icon = iconsMap[category] || BookOpen
                     return (
-                        <div key={category} className="mb-10">
-                            <h3 className="px-4 text-[11px] font-bold text-zinc-500 uppercase tracking-[0.2em] mb-4 flex items-center justify-between">
-                                <span className="flex items-center gap-2">
-                                    <Icon className="size-3.5" />
-                                    {category}
-                                </span>
-                            </h3>
-                            <div className="space-y-0.5">
-                                {hierarchy[category].map((doc) => (
-                                    <Link
-                                        key={doc.slug}
-                                        href={`/docs/${category}/${doc.slug}`}
-                                        className="group flex items-center justify-between px-4 py-2 text-[13px] font-medium text-zinc-400 hover:text-white rounded-xl hover:bg-white/[0.03] transition-all duration-200 border border-transparent hover:border-white/[0.05]"
-                                    >
-                                        {doc.title}
-                                        <ChevronRight className="size-3 opacity-0 group-hover:opacity-40 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
+                        <SidebarSection
+                            key={category}
+                            category={category}
+                            docs={hierarchy[category]}
+                            icon={Icon}
+                            defaultOpen={defaultOpenCategories.includes(category)}
+                        />
                     )
                 })}
             </nav>
