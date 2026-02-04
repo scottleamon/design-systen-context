@@ -33,14 +33,13 @@ export default async function Sidebar() {
 
     return (
         <aside className="w-72 border-r border-zinc-200 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-950/50 backdrop-blur-xl flex flex-col h-screen sticky top-0">
-            <div className="p-8 pb-4 flex items-center justify-between">
+            <div className="p-8 pb-4">
                 <Link href="/" className="flex items-center gap-3 font-bold text-xl tracking-tight text-zinc-900 dark:text-white group">
                     <div className="size-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
                         <div className="size-5 bg-white/20 backdrop-blur-sm rotate-45 rounded-md border border-white/30" />
                     </div>
                     <span className="font-['Outfit']">Workbench</span>
                 </Link>
-                <ThemeToggle />
             </div>
 
             <nav className="flex-1 overflow-y-auto px-4 py-6 scrollbar-hide">
@@ -66,7 +65,7 @@ export default async function Sidebar() {
                 ))}
             </nav>
 
-            <div className="p-6 mt-auto">
+            <div className="p-6 mt-auto space-y-4">
                 <div className="p-4 bg-zinc-100 dark:bg-gradient-to-br dark:from-zinc-900 dark:to-black rounded-2xl border border-zinc-200 dark:border-white/[0.05] shadow-sm dark:shadow-2xl">
                     <div className="flex items-center gap-3 mb-3">
                         <div className="relative">
@@ -79,6 +78,7 @@ export default async function Sidebar() {
                         Edits to <code className="text-zinc-700 dark:text-zinc-300">.design-system-context/</code> sync instantly.
                     </p>
                 </div>
+                <ThemeToggle />
             </div>
         </aside>
     )
