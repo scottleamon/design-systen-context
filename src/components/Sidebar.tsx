@@ -1,28 +1,7 @@
 import Link from "next/link"
 import { getDocsHierarchy } from "@/lib/system"
-import {
-    BookOpen,
-    Palette,
-    Component,
-    Rss,
-    Smile,
-    Home,
-    Scale,
-    Accessibility,
-    ListChecks
-} from "lucide-react"
+import { Home } from "lucide-react"
 import SidebarSection from "./SidebarSection"
-
-const iconsMap: Record<string, any> = {
-    rules: BookOpen,
-    tokens: Palette,
-    components: Component,
-    patterns: Rss,
-    icons: Smile,
-    decisions: Scale,
-    a11y: Accessibility,
-    tasks: ListChecks,
-}
 
 // Define category order for consistent display
 const categoryOrder = [
@@ -75,18 +54,14 @@ export default async function Sidebar() {
                     </Link>
                 </div>
 
-                {categories.map((category) => {
-                    const Icon = iconsMap[category] || BookOpen
-                    return (
-                        <SidebarSection
-                            key={category}
-                            category={category}
-                            docs={hierarchy[category]}
-                            icon={Icon}
-                            defaultOpen={defaultOpenCategories.includes(category)}
-                        />
-                    )
-                })}
+                {categories.map((category) => (
+                    <SidebarSection
+                        key={category}
+                        category={category}
+                        docs={hierarchy[category]}
+                        defaultOpen={defaultOpenCategories.includes(category)}
+                    />
+                ))}
             </nav>
 
             <div className="p-6 mt-auto">

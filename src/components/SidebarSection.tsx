@@ -2,8 +2,30 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ChevronRight, ChevronDown } from "lucide-react"
+import {
+    ChevronRight,
+    ChevronDown,
+    BookOpen,
+    Palette,
+    Component,
+    Rss,
+    Smile,
+    Scale,
+    Accessibility,
+    ListChecks
+} from "lucide-react"
 import type { LucideIcon } from "lucide-react"
+
+const iconsMap: Record<string, LucideIcon> = {
+    rules: BookOpen,
+    tokens: Palette,
+    components: Component,
+    patterns: Rss,
+    icons: Smile,
+    decisions: Scale,
+    a11y: Accessibility,
+    tasks: ListChecks,
+}
 
 interface Doc {
     title: string
@@ -14,12 +36,12 @@ interface Doc {
 interface SidebarSectionProps {
     category: string
     docs: Doc[]
-    icon: LucideIcon
     defaultOpen?: boolean
 }
 
-export default function SidebarSection({ category, docs, icon: Icon, defaultOpen = false }: SidebarSectionProps) {
+export default function SidebarSection({ category, docs, defaultOpen = false }: SidebarSectionProps) {
     const [isOpen, setIsOpen] = useState(defaultOpen)
+    const Icon = iconsMap[category] || BookOpen
 
     return (
         <div className="mb-6">
