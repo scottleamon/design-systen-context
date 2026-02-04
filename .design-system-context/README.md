@@ -29,7 +29,7 @@ Before writing any code, verify you are following the correct stack and structur
 **NEVER** use arbitrary values (e.g., `text-[13px]`, `p-[7px]`, `#123456`). Always use the system tokens.
 
 - **Themes:** [system/tokens/themes.md](./system/tokens/themes.md) ⭐ **Start here** - Multi-theme system (Member/Campus/Admin)
-- **Theme Strategy:** [rules/theme-strategy.md](./rules/theme-strategy.md) - When to use which theme
+- **Theme Strategy:** [system/rules/theme-strategy.md](./system/rules/theme-strategy.md) - When to use which theme
 - **Colors:** [system/tokens/colors.md](./system/tokens/colors.md) (Semantic tokens like `bg-primary`, `text-muted-foreground`)
 - **Typography:** [system/tokens/typography.md](./system/tokens/typography.md) (Scale like `text-sm`, `font-semibold`)
 - **Spacing:** [system/tokens/spacing.md](./system/tokens/spacing.md) (Standard Tailwind scale `gap-4`, `p-6`)

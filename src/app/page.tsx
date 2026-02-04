@@ -13,8 +13,8 @@ export default function Home() {
         },
         {
             title: "Design Tokens",
-            description: "The periodic table of your UI: colors, type, and spacing scales.",
-            href: "/docs/tokens/colors",
+            description: "3 themes for 3 properties. Colors, typography, and spacing that adapt across Member, Campus, and Admin.",
+            href: "/docs/tokens/themes",
             icon: Palette,
             gradient: "from-purple-500/20 to-pink-500/20",
             accent: "text-purple-400"
@@ -96,7 +96,7 @@ export default function Home() {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4 relative z-10">
-                        {['system/tokens/colors.md', 'system/components/button.md', 'system/rules/tech-stack.md'].map((path) => (
+                        {['system/tokens/themes.md', 'system/rules/theme-strategy.md', 'system/components/button.md'].map((path) => (
                             <div key={path} className="px-5 py-3 bg-black/40 backdrop-blur-md rounded-xl text-[13px] font-mono text-indigo-300 border border-white/[0.05] shadow-xl">
                                 {path}
                             </div>
