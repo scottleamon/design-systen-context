@@ -32,11 +32,17 @@ export async function getDocsHierarchy() {
             .map((file) => {
                 const slug = file.replace(/\.md$/, "")
                 return {
-                    title: formatTitle(slug),
+                    title: slug === "README" ? "Overview" : formatTitle(slug),
                     slug,
                     category,
                     fullPath: path.join(category, file)
                 }
+            })
+            // Sort so Overview (README) comes first
+            .sort((a, b) => {
+                if (a.slug === "README") return -1
+                if (b.slug === "README") return 1
+                return a.title.localeCompare(b.title)
             })
     }
 
@@ -51,11 +57,17 @@ export async function getDocsHierarchy() {
             .map((file) => {
                 const slug = file.replace(/\.md$/, "")
                 return {
-                    title: formatTitle(slug),
+                    title: slug === "README" ? "Overview" : formatTitle(slug),
                     slug,
                     category,
                     fullPath: path.join(category, file)
                 }
+            })
+            // Sort so Overview (README) comes first
+            .sort((a, b) => {
+                if (a.slug === "README") return -1
+                if (b.slug === "README") return 1
+                return a.title.localeCompare(b.title)
             })
     }
 
@@ -84,9 +96,18 @@ function formatTitle(slug: string): string {
         .join(" ")
 }
 
+// Find file with case-insensitive matching
+function findFileInsensitive(dir: string, filename: string): string | null {
+    if (!fs.existsSync(dir)) return null
+    
+    const files = fs.readdirSync(dir)
+    const match = files.find(f => f.toLowerCase() === filename.toLowerCase())
+    return match ? path.join(dir, match) : null
+}
+
 export async function getDocContent(category: string, slug: string) {
     // Handle root-level files like WORKFLOW.md
-    if (category === "tasks" && slug === "WORKFLOW") {
+    if (category === "tasks" && slug.toUpperCase() === "WORKFLOW") {
         const filePath = path.join(CONTEXT_DIR, "WORKFLOW.md")
         if (!fs.existsSync(filePath)) return null
         
@@ -102,29 +123,37 @@ export async function getDocContent(category: string, slug: string) {
 
     // Handle root-level categories (tasks/)
     if (ROOT_CATEGORIES.includes(category)) {
-        const filePath = path.join(CONTEXT_DIR, category, `${slug}.md`)
-        if (!fs.existsSync(filePath)) return null
+        const categoryDir = path.join(CONTEXT_DIR, category)
+        const filePath = findFileInsensitive(categoryDir, `${slug}.md`)
+        if (!filePath) return null
 
         const fileContent = fs.readFileSync(filePath, "utf8")
         const { data, content } = matter(fileContent)
+        
+        // Extract actual filename for proper title
+        const actualSlug = path.basename(filePath, ".md")
 
         return {
             meta: data as Partial<DocMetadata>,
             content,
-            title: formatTitle(slug),
+            title: actualSlug === "README" ? "Overview" : formatTitle(actualSlug),
         }
     }
 
     // Handle system/ categories
-    const filePath = path.join(SYSTEM_DIR, category, `${slug}.md`)
-    if (!fs.existsSync(filePath)) return null
+    const categoryDir = path.join(SYSTEM_DIR, category)
+    const filePath = findFileInsensitive(categoryDir, `${slug}.md`)
+    if (!filePath) return null
 
     const fileContent = fs.readFileSync(filePath, "utf8")
     const { data, content } = matter(fileContent)
+    
+    // Extract actual filename for proper title
+    const actualSlug = path.basename(filePath, ".md")
 
     return {
         meta: data as Partial<DocMetadata>,
         content,
-        title: formatTitle(slug),
+        title: actualSlug === "README" ? "Overview" : formatTitle(actualSlug),
     }
 }
