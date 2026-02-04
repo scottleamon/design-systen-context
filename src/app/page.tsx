@@ -111,14 +111,14 @@ export default function Home() {
                 </div>
 
                 {/* Needs Input Widget */}
-                <div className="p-6 rounded-xl border border-amber-200 dark:border-amber-500/20 bg-amber-50 dark:bg-amber-500/5 mb-8">
+                <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/30 mb-8">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
-                            <AlertCircle className="size-5 text-amber-600 dark:text-amber-500" />
+                            <AlertCircle className="size-5 text-zinc-400 dark:text-zinc-500" />
                             <h3 className="font-semibold text-zinc-900 dark:text-white font-['Outfit']">Needs Human Input</h3>
                         </div>
                         <div className="flex items-center gap-3 text-xs">
-                            <span className="px-2 py-1 bg-red-100 dark:bg-red-500/10 text-red-700 dark:text-red-400 rounded-md font-medium">
+                            <span className="px-2 py-1 bg-indigo-100 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 rounded-md font-medium">
                                 {stats.highPriority} high priority
                             </span>
                             <span className="text-zinc-500">
@@ -131,7 +131,7 @@ export default function Home() {
                             <Link
                                 key={todo.id}
                                 href={`/docs/${todo.category}/${todo.filePath.split('/').pop()?.replace('.md', '')}`}
-                                className="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-amber-300 dark:hover:border-amber-500/30 transition-colors group"
+                                className="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-300 dark:hover:border-indigo-500/30 transition-colors group"
                             >
                                 {todo.status === "complete" ? (
                                     <CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" />
@@ -140,11 +140,11 @@ export default function Home() {
                                 )}
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-2 mb-0.5">
-                                        <span className="font-medium text-sm text-zinc-900 dark:text-white group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
+                                        <span className="font-medium text-sm text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                                             {todo.title}
                                         </span>
                                         {todo.priority === "high" && (
-                                            <span className="px-1.5 py-0.5 text-[10px] font-bold uppercase bg-red-100 dark:bg-red-500/10 text-red-600 dark:text-red-400 rounded">
+                                            <span className="px-1.5 py-0.5 text-[10px] font-bold uppercase bg-indigo-100 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded">
                                                 High
                                             </span>
                                         )}
