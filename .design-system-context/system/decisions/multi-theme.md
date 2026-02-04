@@ -18,7 +18,7 @@ This document should explain the rationale behind:
 
 ## Current State
 
-From `rules/theme-strategy.md`:
+From [`rules/theme-strategy.md`](../rules/theme-strategy.md):
 
 | Theme | Property | Primary User | Primary Color |
 |-------|----------|--------------|---------------|

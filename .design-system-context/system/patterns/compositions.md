@@ -417,4 +417,19 @@ Status indicators in data tables.
 
 ---
 
+## See Also
+
+**Components Used:**
+- [Card](../components/card.md), [Button](../components/button.md), [Input](../components/input.md), [Label](../components/label.md)
+- [Dialog](../components/dialog.md), [Alert](../components/alert.md), [Badge](../components/badge.md)
+- [Table](../components/table.md), [Dropdown Menu](../components/dropdown-menu.md)
+- [Tabs](../components/tabs.md), [Sidebar](../components/sidebar.md), [Breadcrumb](../components/breadcrumb.md)
+- [Avatar](../components/avatar.md), [Collapsible](../components/collapsible.md)
+
+**Related Patterns:**
+- [Layouts](./layouts.md) - Page-level layout patterns
+- [States](./states.md) - Loading, error, empty states
+
+---
+
 *Last updated: January 16, 2026*

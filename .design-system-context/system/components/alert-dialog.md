@@ -259,4 +259,12 @@ const [open, setOpen] = useState(false)
 
 ---
 
+## See Also
+
+- **Accessibility:** [Dialog Accessibility Requirements](../a11y/dialogs.md) - Focus trapping, keyboard behavior, ARIA alertdialog role
+- **Related Components:** [Dialog](./dialog.md) (non-blocking), [Alert](./alert.md) (inline notice)
+- **Patterns:** [Component Match](../patterns/component-match.md#feedback-components-alert-vs-toast-vs-dialog)
+
+---
+
 *Last updated: December 18, 2025*

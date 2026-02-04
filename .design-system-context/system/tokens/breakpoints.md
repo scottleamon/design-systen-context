@@ -298,4 +298,16 @@ module.exports = {
 
 ---
 
+## See Also
+
+- **Related Tokens:**
+  - [Spacing](./spacing.md) - Responsive spacing values
+  - [Typography](./typography.md) - Responsive type scale
+- **Related Patterns:**
+  - [Layouts](../patterns/layouts.md) - Responsive layout patterns
+- **Design Decisions:**
+  - [Token Scale Rationale](../decisions/token-scale.md) - Why these breakpoints were chosen
+
+---
+
 *Last updated: January 16, 2026*

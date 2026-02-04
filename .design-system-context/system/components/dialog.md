@@ -188,5 +188,13 @@ const [open, setOpen] = useState(false)
 
 ---
 
+## See Also
+
+- **Accessibility:** [Dialog Accessibility Requirements](../a11y/dialogs.md) - Focus trapping, keyboard behavior, ARIA
+- **Related Components:** [Alert Dialog](./alert-dialog.md), [Sheet](./sheet.md), [Drawer](./drawer.md)
+- **Patterns:** [Dialog with Form](../patterns/compositions.md#dialog-with-form), [Component Match](../patterns/component-match.md#overlay-components-dialog-vs-sheet-vs-drawer)
+
+---
+
 *Last updated: December 18, 2025*
 

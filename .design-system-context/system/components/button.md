@@ -72,7 +72,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 ## Icons
 
 ```tsx
-import { Mail, ArrowRight, Loader2 } from "lucide-react"
+import { Mail, ArrowRight, LoaderCircle } from "lucide-react"
 
 // Left icon (using gap)
 <Button className="gap-2">
@@ -103,7 +103,7 @@ import { Mail, ArrowRight, Loader2 } from "lucide-react"
 | Focus | Base colors | Base background | `ring-3 ring-ring rounded-md` |
 | Pressed | Base colors | Base background | No additional styling (per design preference) |
 | Disabled | `opacity-50` | `opacity-50` | `disabled` prop, `pointer-events-none` |
-| Loading | Base colors | Base background | `disabled` + `Loader2` with `animate-spin` |
+| Loading | Base colors | Base background | `disabled` + `LoaderCircle` with `animate-spin` |
 
 ### Focus Ring
 ```tsx
@@ -134,10 +134,10 @@ hover:bg-primary/90
 
 ### Loading State
 ```tsx
-import { Loader2 } from "lucide-react"
+import { LoaderCircle } from "lucide-react"
 
 <Button disabled className="gap-2">
-  <Loader2 className="size-4 animate-spin" />
+  <LoaderCircle className="size-4 animate-spin" />
   Please wait
 </Button>
 ```
@@ -182,7 +182,7 @@ import Link from "next/link"
 
 // Loading with aria-busy
 <Button disabled aria-busy="true" className="gap-2">
-  <Loader2 className="size-4 animate-spin" />
+  <LoaderCircle className="size-4 animate-spin" />
   Saving...
 </Button>
 ```

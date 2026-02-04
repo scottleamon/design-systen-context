@@ -164,4 +164,15 @@ module.exports = {
 ```
 
 ---
+
+## See Also
+
+- **Related Tokens:**
+  - [Spacing](./spacing.md) - Text spacing and line heights
+  - [Colors](./colors.md) - Text colors (foreground, muted-foreground)
+- **Design Decisions:**
+  - [Typography Rationale](../decisions/typography.md) - Why Adelle Sans was chosen
+  - [Token Scale Rationale](../decisions/token-scale.md) - Why this type scale was chosen
+
+---
 *Last extracted: January 16, 2026*

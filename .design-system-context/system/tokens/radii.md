@@ -89,4 +89,14 @@ rounded-full     /* 9999px (circular) */
 ```
 
 ---
+
+## See Also
+
+- **Related Tokens:**
+  - [Spacing](./spacing.md) - Spacing scale (related progression)
+  - [Shadows](./shadows.md) - Often paired with radius for elevation
+- **Design Decisions:**
+  - [Token Scale Rationale](../decisions/token-scale.md) - Why this radius scale was chosen
+
+---
 *Last extracted: December 16, 2025*

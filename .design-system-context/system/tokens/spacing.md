@@ -108,4 +108,15 @@ gap-0 gap-px gap-0.5 gap-1 gap-1.5 gap-2 gap-2.5 gap-3 gap-3.5 gap-4 gap-5 gap-6
 ```
 
 ---
+
+## See Also
+
+- **Related Tokens:**
+  - [Breakpoints](./breakpoints.md) - Responsive spacing patterns
+  - [Radii](./radii.md) - Border radius scale (follows similar progression)
+  - [Typography](./typography.md) - Line heights that relate to spacing
+- **Design Decisions:**
+  - [Token Scale Rationale](../decisions/token-scale.md) - Why this spacing scale was chosen
+
+---
 *Last extracted: December 16, 2025*

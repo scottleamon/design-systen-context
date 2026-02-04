@@ -56,7 +56,7 @@ Animation and transition specifications for consistent UI motion.
 ### Spinner
 
 ```tsx
-<Loader2 className="size-4 animate-spin" />
+<LoaderCircle className="size-4 animate-spin" />
 ```
 
 Built-in Tailwind animation: rotates 360° in 1 second, linear, infinite.
@@ -254,6 +254,16 @@ Always respect user preferences for reduced motion:
 | Spinner not animating | Use `animate-spin` class (includes infinite) |
 | Skeleton flashing | `animate-pulse` uses 2s duration by default |
 | Dropdown appears abruptly | Add Radix animate-in/out classes |
+
+---
+
+## See Also
+
+- **Related Patterns:**
+  - [UI States](../patterns/states.md) - Loading, error, and transition states
+- **Related Components:**
+  - [Accordion](../components/accordion.md) - Uses motion for expand/collapse
+  - [Dialog](../components/dialog.md) - Uses motion for open/close
 
 ---
 

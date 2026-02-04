@@ -266,5 +266,16 @@ module.exports = {
 ```
 
 ---
+
+## See Also
+
+- **Related Tokens:**
+  - [Themes](./themes.md) - Complete theme specifications for Member/Campus/Admin
+  - [Shadows](./shadows.md) - Elevation and border styles
+- **Design Decisions:**
+  - [Color System Rationale](../decisions/color-system.md) - Why these colors were chosen
+  - [Multi-Theme Strategy](../decisions/multi-theme.md) - Why 3 themes exist
+
+---
 *Last extracted: December 16, 2025*
 *Source: ShadcnDesign UI Kit - Button page*

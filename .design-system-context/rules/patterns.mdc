@@ -24,7 +24,7 @@ Reference `.design-system-context/system/patterns/states.md` for:
 
 ### Loading States
 - Skeleton loaders for page/section loads
-- Button loading: `<Loader2 className="size-4 animate-spin" />` + disabled
+- Button loading: `<LoaderCircle className="size-4 animate-spin" />` + disabled
 - Inline loading indicators
 
 ### Error States

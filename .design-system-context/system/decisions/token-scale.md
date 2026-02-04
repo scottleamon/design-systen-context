@@ -19,10 +19,10 @@ This document should explain the rationale behind:
 ## Current State (Values Only)
 
 ### Spacing Scale
-From `tokens/spacing.md`: Uses Tailwind default 4px base unit (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96)
+From [`tokens/spacing.md`](../tokens/spacing.md): Uses Tailwind default 4px base unit (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96)
 
 ### Breakpoints
-From `tokens/breakpoints.md`:
+From [`tokens/breakpoints.md`](../tokens/breakpoints.md):
 | Name | Value | Target |
 |------|-------|--------|
 | sm | 640px | Large phones |
@@ -32,7 +32,7 @@ From `tokens/breakpoints.md`:
 | 2xl | 1536px | Large screens |
 
 ### Border Radius
-From `tokens/radii.md`:
+From [`tokens/radii.md`](../tokens/radii.md):
 | Token | Value |
 |-------|-------|
 | rounded-sm | 6px |
@@ -41,7 +41,7 @@ From `tokens/radii.md`:
 | rounded-xl | 14px |
 
 ### Typography Scale
-From `tokens/typography.md`: Uses Adelle Sans with sizes from xs (12px) to 5xl (48px)
+From [`tokens/typography.md`](../tokens/typography.md): Uses Adelle Sans with sizes from xs (12px) to 5xl (48px)
 
 ---
 

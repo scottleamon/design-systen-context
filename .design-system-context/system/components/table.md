@@ -161,5 +161,13 @@ import {
 
 ---
 
+## See Also
+
+- **Accessibility:** [Data Table Accessibility Requirements](../a11y/data-tables.md) - Header associations, keyboard navigation
+- **Related Components:** [Data Table](./data-table.md) (with sorting/filtering)
+- **Patterns:** [Table with Toolbar](../patterns/compositions.md#table-with-toolbar)
+
+---
+
 *Last updated: December 19, 2024*
 

@@ -335,3 +335,7 @@ Is the content interactive (buttons, links)?
 | Subtle helper text | [Tooltip](../components/tooltip.md) |
 | Rich preview on hover | [HoverCard](../components/hover-card.md) |
 | Interactive menu | [Popover](../components/popover.md) |
+
+---
+
+*Last updated: February 4, 2026*

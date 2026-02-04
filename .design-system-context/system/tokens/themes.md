@@ -170,5 +170,17 @@ For complete token definitions including all color scales, spacing, and typograp
 
 ---
 
+## See Also
+
+- **Related Tokens:**
+  - [Colors](./colors.md) - Complete color palette and semantic tokens
+- **Related Rules:**
+  - [Theme Strategy](../rules/theme-strategy.md) - When to use which theme
+- **Design Decisions:**
+  - [Multi-Theme Rationale](../decisions/multi-theme.md) - Why 3 themes exist
+  - [Color System Rationale](../decisions/color-system.md) - Why these brand colors
+
+---
+
 *Last updated: February 4, 2026*  
 *Source: Figma Design System - TimelyCare Kit*

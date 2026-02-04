@@ -262,7 +262,7 @@ Example:
 ```tsx
 // EXCEPTION: Brand logo requires exact hex per brand guidelines
 // Approved by: [Name] on [Date]
-// Tracked in: decisions/brand-logo-colors.md
+// Tracked in: decisions/color-system.md
 <Logo color="#19518B" />
 ```
 

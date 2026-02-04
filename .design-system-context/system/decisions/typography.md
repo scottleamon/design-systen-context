@@ -18,7 +18,7 @@ This document should explain the rationale behind:
 
 ## Current State
 
-From `tokens/typography.md`:
+From [`tokens/typography.md`](../tokens/typography.md):
 - **Primary Font:** Adelle Sans (Regular, Medium, Semibold, Bold, Extrabold)
 - **Monospace Font:** Adelle Mono
 - **Size Scale:** xs (12px) to 5xl (48px)

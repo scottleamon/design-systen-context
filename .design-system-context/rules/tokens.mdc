@@ -20,7 +20,7 @@ This design system supports **3 distinct themes** for 3 web properties:
 2. **Use semantic tokens** (`bg-primary`, `text-accent`) not hard-coded colors
 3. **Default to Member theme** for examples unless specified otherwise
 
-See `.design-system-context/system/tokens/themes.md` and `.design-system-context/rules/theme-strategy.md` for complete details.
+See `.design-system-context/system/tokens/themes.md` and `.design-system-context/system/rules/theme-strategy.md` for complete details.
 
 ## Color Tokens
 Reference `.design-system-context/system/tokens/themes.md` for theme-specific colors, and `.design-system-context/system/tokens/colors.md` for:

@@ -13,7 +13,14 @@ AI agents (Cursor, Claude, Antigravity) use this repo to understand *how* to bui
 > - **Campus (Green)** - University/campus administrator portal
 > - **Admin (Neutral)** - Internal admin dashboard
 >
-> When building features, always clarify which property you're targeting. See [Theme Strategy](./rules/theme-strategy.md).
+> When building features, always clarify which property you're targeting. See [Theme Strategy](./system/rules/theme-strategy.md).
+
+> [!TIP]
+> **File Structure:** This repo contains two types of rule files:
+> - `rules/*.mdc` - Cursor IDE rules (auto-applied based on globs, concise enforcement)
+> - `system/rules/*.md` - Documentation (detailed guidelines, rationale, examples)
+>
+> The `.mdc` files reference the `.md` files for full details.
 
 ---
 
@@ -33,6 +40,9 @@ Before writing any code, verify you are following the correct stack and structur
 - **Colors:** [system/tokens/colors.md](./system/tokens/colors.md) (Semantic tokens like `bg-primary`, `text-muted-foreground`)
 - **Typography:** [system/tokens/typography.md](./system/tokens/typography.md) (Scale like `text-sm`, `font-semibold`)
 - **Spacing:** [system/tokens/spacing.md](./system/tokens/spacing.md) (Standard Tailwind scale `gap-4`, `p-6`)
+- **Breakpoints:** [system/tokens/breakpoints.md](./system/tokens/breakpoints.md) (Responsive breakpoints `sm`, `md`, `lg`, `xl`, `2xl`)
+- **Radii:** [system/tokens/radii.md](./system/tokens/radii.md) (Border radius `rounded-md`, `rounded-lg`, `rounded-xl`)
+- **Shadows:** [system/tokens/shadows.md](./system/tokens/shadows.md) (Elevation `shadow-sm`, `shadow-md`, `shadow-lg`)
 - **Motion:** [system/tokens/motion.md](./system/tokens/motion.md) (Durations and easings)
 
 ---
@@ -84,7 +94,32 @@ Follow [Accessibility Guidelines](./system/rules/accessibility.md).
 
 ---
 
-## 6. Common Anti-Patterns
+## 6. Accessibility Guidelines
+
+Detailed accessibility requirements by component category. See also [General Accessibility Rules](./system/rules/accessibility.md).
+
+- **Overview:** [system/a11y/README.md](./system/a11y/README.md)
+- **Forms:** [system/a11y/forms.md](./system/a11y/forms.md) (Input, Select, Checkbox, Radio, Date Picker)
+- **Dialogs:** [system/a11y/dialogs.md](./system/a11y/dialogs.md) (Dialog, AlertDialog, Sheet, Drawer, Popover)
+- **Data Tables:** [system/a11y/data-tables.md](./system/a11y/data-tables.md) (Table, DataTable)
+- **Navigation:** [system/a11y/navigation.md](./system/a11y/navigation.md) (Tabs, Accordion, Sidebar, Breadcrumb)
+
+---
+
+## 7. Design Decisions
+
+Rationale and context for major system choices. Reference these when you need to understand *why* something is designed a certain way.
+
+- **Overview:** [system/decisions/README.md](./system/decisions/README.md)
+- **Color System:** [system/decisions/color-system.md](./system/decisions/color-system.md)
+- **Multi-Theme:** [system/decisions/multi-theme.md](./system/decisions/multi-theme.md)
+- **Component Library:** [system/decisions/component-library.md](./system/decisions/component-library.md)
+- **Token Scale:** [system/decisions/token-scale.md](./system/decisions/token-scale.md)
+- **Typography:** [system/decisions/typography.md](./system/decisions/typography.md)
+
+---
+
+## 8. Common Anti-Patterns
 - ❌ Hardcoded hex colors (Use `bg-primary`, not `bg-[#19518B]`)
 - ❌ Arbitrary sizing (Use `w-64`, not `w-[250px]`)
 - ❌ Mixing icon libraries (Lucide only)

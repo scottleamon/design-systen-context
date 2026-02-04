@@ -108,4 +108,12 @@ ring-offset-0 ring-offset-1 ring-offset-2 ring-offset-4 ring-offset-8
 ```
 
 ---
+
+## See Also
+
+- **Related Tokens:**
+  - [Colors](./colors.md) - Border colors and background colors
+  - [Radii](./radii.md) - Often paired with shadows for elevation
+
+---
 *Last extracted: December 16, 2025*

@@ -181,4 +181,12 @@ interface AccordionContentProps {
 
 ---
 
+## See Also
+
+- **Accessibility:** [Navigation Accessibility Requirements](../a11y/navigation.md) - Keyboard navigation, ARIA expanded state
+- **Related Components:** [Tabs](./tabs.md) (for parallel sections), [Collapsible](./collapsible.md)
+- **Patterns:** [Component Match](../patterns/component-match.md#navigation-components-tabs-vs-accordion-vs-stepper)
+
+---
+
 *Last updated: December 18, 2025*

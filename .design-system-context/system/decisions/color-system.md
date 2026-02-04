@@ -18,7 +18,7 @@ This document should explain the rationale behind:
 
 ## Current State (Values Only)
 
-From `tokens/colors.md`:
+From [`tokens/colors.md`](../tokens/colors.md):
 
 | Theme | Primary Color | Hex Value |
 |-------|--------------|-----------|

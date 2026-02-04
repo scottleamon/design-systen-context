@@ -18,7 +18,7 @@ This document should explain the rationale behind:
 
 ## Current State
 
-From `rules/tech-stack.md`:
+From [`rules/tech-stack.md`](../rules/tech-stack.md):
 - **Component Library:** shadcn/ui (copy into `@/components/ui`)
 - **Accessibility Primitives:** Radix UI (used by shadcn/ui)
 - **Styling:** Tailwind CSS

@@ -303,4 +303,21 @@ Standard dialog positioning.
 
 ---
 
+## See Also
+
+**Components Used:**
+- [Sidebar](../components/sidebar.md), [Card](../components/card.md), [Button](../components/button.md)
+- [Dialog](../components/dialog.md), [Table](../components/table.md), [Input](../components/input.md)
+- [Pagination](../components/pagination.md)
+
+**Related Patterns:**
+- [Compositions](./compositions.md) - Component combination patterns
+- [States](./states.md) - Loading, error, empty states
+
+**Related Tokens:**
+- [Breakpoints](../tokens/breakpoints.md) - Responsive breakpoints
+- [Spacing](../tokens/spacing.md) - Spacing scale
+
+---
+
 *Last updated: January 16, 2026*

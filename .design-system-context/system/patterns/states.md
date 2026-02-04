@@ -47,14 +47,14 @@ Use skeleton loaders for initial page/section loads.
 
 ```tsx
 <Button disabled className="gap-2">
-  <Loader2 className="size-4 animate-spin" />
+  <LoaderCircle className="size-4 animate-spin" />
   Saving...
 </Button>
 ```
 
 **Rules:**
 - Always disable button during loading
-- Show spinner (`Loader2` with `animate-spin`)
+- Show spinner (`LoaderCircle` with `animate-spin`)
 - Change text to indicate action ("Saving...", "Loading...")
 - Add `aria-busy="true"` for accessibility
 
@@ -64,7 +64,7 @@ For loading within existing content:
 
 ```tsx
 <div className="flex items-center gap-2 text-muted-foreground">
-  <Loader2 className="size-4 animate-spin" />
+  <LoaderCircle className="size-4 animate-spin" />
   <span className="text-sm">Loading...</span>
 </div>
 ```
@@ -74,7 +74,7 @@ For loading within existing content:
 ```tsx
 <div className="flex items-center justify-center min-h-[400px]">
   <div className="flex flex-col items-center gap-4">
-    <Loader2 className="size-8 animate-spin text-primary" />
+    <LoaderCircle className="size-8 animate-spin text-primary" />
     <p className="text-sm text-muted-foreground">Loading your data...</p>
   </div>
 </div>
@@ -326,7 +326,7 @@ toast.success("Changes saved", {
 
 ```tsx
 <Badge variant="outline" className="gap-1">
-  <Loader2 className="size-3 animate-spin" />
+  <LoaderCircle className="size-3 animate-spin" />
   Processing
 </Badge>
 ```
@@ -377,6 +377,20 @@ Use appropriate feedback based on severity and user action:
 {!isLoading && data.length === 0 && <EmptyState />}
 {!isLoading && data.length > 0 && <DataTable data={data} />}
 ```
+
+---
+
+## See Also
+
+**Components Used:**
+- [Skeleton](../components/skeleton.md), [Card](../components/card.md), [Button](../components/button.md)
+- [Alert](../components/alert.md), [Dialog](../components/dialog.md), [Input](../components/input.md)
+- [Badge](../components/badge.md), [Progress](../components/progress.md)
+- [Sonner (Toast)](../components/sonner.md)
+
+**Related Patterns:**
+- [Compositions](./compositions.md) - Component combination patterns
+- [Layouts](./layouts.md) - Page-level layout patterns
 
 ---
 

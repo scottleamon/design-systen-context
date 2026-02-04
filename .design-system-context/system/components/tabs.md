@@ -147,5 +147,13 @@ const [activeTab, setActiveTab] = useState("account")
 
 ---
 
+## See Also
+
+- **Accessibility:** [Navigation Accessibility Requirements](../a11y/navigation.md) - Keyboard navigation, ARIA tab patterns
+- **Related Components:** [Accordion](./accordion.md) (for stacked content)
+- **Patterns:** [Tabs with Cards](../patterns/compositions.md#tabs-with-cards), [Component Match](../patterns/component-match.md#navigation-components-tabs-vs-accordion-vs-stepper)
+
+---
+
 *Last updated: December 19, 2024*
 
