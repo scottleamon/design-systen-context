@@ -7,6 +7,14 @@ AI agents (Cursor, Claude, Antigravity) use this repo to understand *how* to bui
 > [!IMPORTANT]
 > **Primary Rule:** Do not hallucinate styles or components. Always check the specific documentation files linked below.
 
+> [!NOTE]
+> **Multi-Property System:** This design system supports **3 distinct themes** for 3 web properties:
+> - **Member (Blue)** - Patient/member-facing portal
+> - **Campus (Green)** - University/campus administrator portal
+> - **Admin (Neutral)** - Internal admin dashboard
+>
+> When building features, always clarify which property you're targeting. See [Theme Strategy](./rules/theme-strategy.md).
+
 ---
 
 ## 1. Project Architecture (MANDATORY)
@@ -20,6 +28,8 @@ Before writing any code, verify you are following the correct stack and structur
 ## 2. Design Tokens
 **NEVER** use arbitrary values (e.g., `text-[13px]`, `p-[7px]`, `#123456`). Always use the system tokens.
 
+- **Themes:** [system/tokens/themes.md](./system/tokens/themes.md) ⭐ **Start here** - Multi-theme system (Member/Campus/Admin)
+- **Theme Strategy:** [rules/theme-strategy.md](./rules/theme-strategy.md) - When to use which theme
 - **Colors:** [system/tokens/colors.md](./system/tokens/colors.md) (Semantic tokens like `bg-primary`, `text-muted-foreground`)
 - **Typography:** [system/tokens/typography.md](./system/tokens/typography.md) (Scale like `text-sm`, `font-semibold`)
 - **Spacing:** [system/tokens/spacing.md](./system/tokens/spacing.md) (Standard Tailwind scale `gap-4`, `p-6`)
@@ -75,10 +85,12 @@ Follow [Accessibility Guidelines](./system/rules/accessibility.md).
 ---
 
 ## 6. Common Anti-Patterns
-- ❌ Hardcoded hex colors (Use `bg-primary`)
+- ❌ Hardcoded hex colors (Use `bg-primary`, not `bg-[#19518B]`)
 - ❌ Arbitrary sizing (Use `w-64`, not `w-[250px]`)
 - ❌ Mixing icon libraries (Lucide only)
 - ❌ Confusing `default` vs `primary` (Shadcn uses `variant="default"` for primary buttons)
+- ❌ Building without knowing the theme (Always clarify: Member/Campus/Admin?)
+- ❌ Theme-specific hard-coding (Use semantic tokens that adapt across themes)
 
 ---
 

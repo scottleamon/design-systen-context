@@ -1,12 +1,32 @@
 # Color Tokens
 
+> [!IMPORTANT]
+> **Multi-Theme System**: This design system supports **3 distinct themes** for 3 web properties:
+> - **Member (Blue)**: Navy blue primary (`#19518B`) - Member portal
+> - **Campus (Green)**: Forest green primary (`#487537`) - Campus portal  
+> - **Admin (Neutral)**: Near black primary (`#18181B`) - Admin dashboard
+>
+> See [`themes.md`](./themes.md) for complete theme specifications and usage guidelines.
+
 ## Color System Overview
 
-This design system uses CSS custom properties with semantic naming. Colors automatically adapt between light and dark modes.
+This design system uses CSS custom properties with semantic naming. Colors automatically adapt between light and dark modes **and across themes**.
+
+The colors shown below represent the **Member (Blue) theme** as the default reference. For Campus (Green) and Admin (Neutral) theme colors, refer to [`themes.md`](./themes.md).
 
 ---
 
-## Primary Colors (VERIFIED FROM FIGMA)
+## Theme-Specific Primary Colors
+
+| Theme | Primary (Light) | Primary (Dark) | Accent (Light) | Use Case |
+|-------|----------------|----------------|----------------|----------|
+| **Member** | `#19518B` Navy | `#529DDE` Light Blue | `#E4EEFA` Pale Blue | Member portal |
+| **Campus** | `#487537` Green | `#84B771` Light Green | `#E8F4E4` Pale Green | Campus portal |
+| **Admin** | `#18181B` Black | `#E4E4E7` Light Gray | `#F4F4F5` Light Gray | Admin dashboard |
+
+---
+
+## Primary Colors (Member Theme - Default)
 
 | Token | CSS Variable | Light | Dark | Usage |
 |-------|--------------|-------|------|-------|
@@ -15,6 +35,8 @@ This design system uses CSS custom properties with semantic naming. Colors autom
 
 **Primary Color: #19518b** (Deep blue - rgba(25, 81, 139, 1))
 
+**Note**: This is the **Member theme** primary color. Campus uses `#487537` (green), Admin uses `#18181B` (neutral). See [`themes.md`](./themes.md).
+
 ## Secondary Colors (VERIFIED FROM FIGMA)
 
 | Token | CSS Variable | Light | Dark | Usage |
@@ -22,14 +44,16 @@ This design system uses CSS custom properties with semantic naming. Colors autom
 | secondary | `--base/secondary` | #f4f4f5 | #27272a | Secondary button backgrounds |
 | secondary-foreground | `--base/secondary-foreground` | **#18181b** | #fafafa | Text on secondary backgrounds |
 
-## Destructive Colors (VERIFIED FROM FIGMA)
+## Destructive Colors (Shared Across All Themes)
 
 | Token | CSS Variable | Light | Dark | Usage |
 |-------|--------------|-------|------|-------|
 | destructive | `--base/destructive` | #dc2626 | #7f1d1d | Destructive button backgrounds |
 | destructive-foreground | `--base/destructive-foreground` | **#fef2f2** | #fef2f2 | Text on destructive (light red tint) |
 
-## Base/Background Colors (VERIFIED FROM FIGMA)
+**Note**: Destructive colors are **identical across all 3 themes** for consistency in error/warning states.
+
+## Base/Background Colors (Shared Across All Themes)
 
 | Token | CSS Variable | Light | Dark | Usage |
 |-------|--------------|-------|------|-------|
@@ -38,7 +62,16 @@ This design system uses CSS custom properties with semantic naming. Colors autom
 | muted | `--base/muted` | **#f4f4f5** | **#27272a** | Muted backgrounds, table rows |
 | muted-foreground | `--base/muted-foreground` | **#71717a** | #a1a1aa | Secondary text, placeholders |
 | border | `--base/border` | **#e4e4e7** | **rgba(255,255,255,0.1)** | Borders, dividers |
-| accent | `--base/accent` | **#e4eefa** | #1e3a5f | Accent backgrounds (light blue) |
+
+**Note**: Background, foreground, muted, and border colors are **identical across all 3 themes**.
+
+## Accent Colors (Theme-Specific)
+
+| Token | Member (Blue) | Campus (Green) | Admin (Neutral) | Usage |
+|-------|--------------|----------------|-----------------|-------|
+| accent (light) | **#e4eefa** | **#e8f4e4** | **#f4f4f5** | Accent backgrounds |
+| accent (dark) | #1e3a5f | #3f6431 | #3f3f46 | Dark mode accents |
+| accent-foreground | #19518b | #487537 | #18181b | Text on accent backgrounds |
 
 ## Focus/Ring Colors (VERIFIED FROM FIGMA)
 

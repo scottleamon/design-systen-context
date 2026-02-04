@@ -1,5 +1,10 @@
 # Button
 
+> [!NOTE]
+> **Theme-Aware Component**: Button colors adapt to the active theme (Member/Campus/Admin).
+> The `default` variant uses `bg-primary` which will be navy in Member, green in Campus, and neutral in Admin.
+> Always use semantic variants, not hard-coded colors.
+
 ## Import
 ```tsx
 import { Button } from "@/components/ui/button"
@@ -19,14 +24,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 ## Variants
 
-| Variant | Background | Text Color | Border | Shadow |
-|---------|------------|------------|--------|--------|
-| `default` | `bg-primary` | `text-primary-foreground` | none | `shadow-xs` |
-| `secondary` | `bg-secondary` | `text-secondary-foreground` | none | `shadow-xs` |
-| `destructive` | `bg-destructive` | `text-destructive-foreground` | none | `shadow-xs` |
-| `outline` | `bg-transparent` | `text-primary` | `border border-border` | `shadow-xs` |
-| `ghost` | `bg-transparent` | `text-primary` | none | none |
-| `link` | `bg-transparent` | `text-primary` | none | none |
+| Variant | Background | Text Color | Border | Shadow | Theme Behavior |
+|---------|------------|------------|--------|--------|----------------|
+| `default` | `bg-primary` | `text-primary-foreground` | none | `shadow-xs` | Navy (Member), Green (Campus), Black (Admin) |
+| `secondary` | `bg-secondary` | `text-secondary-foreground` | none | `shadow-xs` | Same across themes |
+| `destructive` | `bg-destructive` | `text-destructive-foreground` | none | `shadow-xs` | Red across all themes |
+| `outline` | `bg-transparent` | `text-primary` | `border border-border` | `shadow-xs` | Border color adapts to theme |
+| `ghost` | `bg-transparent` | `text-primary` | none | none | Text color adapts to theme |
+| `link` | `bg-transparent` | `text-primary` | none | none | Text color adapts to theme |
 
 ### Choosing a Variant
 - **Default:** Use for the most important action on a page (one per view ideally)

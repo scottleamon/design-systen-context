@@ -1,5 +1,12 @@
 # Alert
 
+> [!NOTE]
+> **Theme-Aware Component**: Alert icon colors adapt to the active theme when using the `default` variant.
+> - Member theme: Navy blue icon (`#19518B`)
+> - Campus theme: Green icon (`#487537`)
+> - Admin theme: Neutral icon (`#18181B`)
+> - Destructive variant uses red across all themes for consistency.
+
 ## Import
 ```tsx
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -28,10 +35,10 @@ interface AlertDescriptionProps {
 
 ## Variants
 
-| Variant | Icon Color | Title Color | Description Color |
-|---------|------------|-------------|-------------------|
-| `default` | `text-primary` (#19518b) | `text-foreground` | `text-muted-foreground` |
-| `destructive` | `text-destructive` (#dc2626) | `text-destructive` | `text-destructive` |
+| Variant | Icon Color | Title Color | Description Color | Theme Behavior |
+|---------|------------|-------------|-------------------|----------------|
+| `default` | `text-primary` | `text-foreground` | `text-muted-foreground` | Icon adapts to theme (navy/green/neutral) |
+| `destructive` | `text-destructive` | `text-destructive` | `text-destructive` | Red across all themes |
 
 ### Choosing a Variant
 - **Default:** Success confirmations, informational notices, system status

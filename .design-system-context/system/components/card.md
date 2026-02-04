@@ -1,5 +1,10 @@
 # Card
 
+> [!NOTE]
+> **Theme-Aware Component**: Card borders and accents adapt to the active theme.
+> When using accent colors (like icons or highlights), they will automatically use the theme's primary color.
+> Examples below use Member theme (navy blue) but will adapt to Campus (green) or Admin (neutral).
+
 ## Import
 ```tsx
 import {
