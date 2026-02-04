@@ -2,8 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light mode (default) */
 :root {
-  --background: 240 10% 2%;
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 263.4 70% 50.4%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 263.4 70% 50.4%;
+}
+
+/* Dark mode */
+.dark {
+  --background: 240 10% 3.9%;
   --foreground: 0 0% 98%;
   --card: 240 10% 3.9%;
   --card-foreground: 0 0% 98%;
@@ -11,7 +35,7 @@
   --popover-foreground: 0 0% 98%;
   --primary: 263.4 70% 50.4%;
   --primary-foreground: 210 20% 98%;
-  --secondary: 240 3.7% 10%;
+  --secondary: 240 3.7% 15.9%;
   --secondary-foreground: 0 0% 98%;
   --muted: 240 3.7% 15.9%;
   --muted-foreground: 240 5% 64.9%;
@@ -19,8 +43,8 @@
   --accent-foreground: 0 0% 98%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 12%;
-  --input: 240 3.7% 12%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
   --ring: 263.4 70% 50.4%;
 }
 
@@ -31,9 +55,14 @@ body {
 }
 
 .glass {
-  background: rgba(10, 10, 12, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass {
+  background: rgba(10, 10, 12, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -88,7 +117,7 @@ body {
 }
 
 .prose pre {
-  background: #000000;
+  background: hsl(var(--secondary));
   padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid hsl(var(--border));
@@ -96,12 +125,20 @@ body {
   overflow-x: auto;
 }
 
+.dark .prose pre {
+  background: #000000;
+}
+
 .prose pre code {
   background: transparent;
   padding: 0;
-  color: #e4e4e7;
+  color: hsl(var(--foreground));
   font-size: 0.9em;
   border: none;
+}
+
+.dark .prose pre code {
+  color: #e4e4e7;
 }
 
 .prose ul {
