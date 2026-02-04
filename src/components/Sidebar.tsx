@@ -7,7 +7,10 @@ import {
     Rss,
     Smile,
     Home,
-    ChevronRight
+    ChevronRight,
+    Scale,
+    Accessibility,
+    ListChecks
 } from "lucide-react"
 
 const iconsMap: Record<string, any> = {
@@ -16,11 +19,34 @@ const iconsMap: Record<string, any> = {
     components: Component,
     patterns: Rss,
     icons: Smile,
+    decisions: Scale,
+    a11y: Accessibility,
+    tasks: ListChecks,
 }
+
+// Define category order for consistent display
+const categoryOrder = [
+    "tasks",      // Workflow/tasks first - how to use the system
+    "rules",      // Core rules
+    "tokens",     // Design tokens
+    "components", // Component docs
+    "patterns",   // Pattern docs
+    "icons",      // Icon inventory
+    "decisions",  // Decision documentation
+    "a11y",       // Accessibility details
+]
 
 export default async function Sidebar() {
     const hierarchy = await getDocsHierarchy()
-    const categories = Object.keys(hierarchy)
+    // Sort categories according to defined order, with any unknown categories at the end
+    const categories = Object.keys(hierarchy).sort((a, b) => {
+        const aIndex = categoryOrder.indexOf(a)
+        const bIndex = categoryOrder.indexOf(b)
+        if (aIndex === -1 && bIndex === -1) return 0
+        if (aIndex === -1) return 1
+        if (bIndex === -1) return -1
+        return aIndex - bIndex
+    })
 
     return (
         <aside className="w-72 border-r border-zinc-800/50 bg-zinc-950/50 backdrop-blur-xl flex flex-col h-screen sticky top-0">
