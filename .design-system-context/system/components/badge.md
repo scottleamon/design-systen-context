@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge"
 ## Props
 ```tsx
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "secondary" | "outline" | "destructive" | "verified"
+  variant?: "default" | "secondary" | "outline" | "destructive" | "success" | "warning"
   className?: string
   children: React.ReactNode
 }
@@ -23,15 +23,17 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 | `default` | Primary actions, main categories | `bg-primary` | `text-primary-foreground` |
 | `secondary` | Neutral status, less prominent labels | `bg-secondary` | `text-secondary-foreground` |
 | `outline` | Subtle indicators, bordered tags | `bg-transparent` | `text-foreground` |
-| `destructive` | Errors, warnings, critical status | `bg-destructive` | `text-destructive-foreground` |
-| `verified` | Verified status, trusted items | `bg-primary` | `text-white` (with BadgeCheck icon) |
+| `destructive` | Errors, critical status | `bg-destructive` | `text-destructive-foreground` |
+| `success` | Success, approved, active | `bg-success` | `text-success-foreground` |
+| `warning` | Warnings, pending review | `bg-warning` | `text-warning-foreground` |
 
 ### Choosing a Variant
 - **Default:** Main categories, active status, primary labels
 - **Secondary:** Tags, neutral metadata, less important info
 - **Outline:** Minimal styling, subtle indicators
-- **Destructive:** Errors, warnings, removal actions
-- **Verified:** Verified accounts, trusted content (always includes BadgeCheck icon)
+- **Destructive:** Errors, removal actions
+- **Success:** Approved, active, completed
+- **Warning:** Pending, caution, needs review
 
 ---
 
@@ -65,7 +67,6 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 | Icon | Use For |
 |------|---------|
 | `Check` | Success, completed |
-| `BadgeCheck` | Verified status (built into `verified` variant) |
 | `AlertCircle` | Warnings, alerts |
 | `ArrowRight` | Links, navigation |
 | `X` | Removable badges |
@@ -91,12 +92,13 @@ interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 <Badge variant="secondary">Secondary</Badge>
 <Badge variant="outline">Outline</Badge>
 <Badge variant="destructive">Destructive</Badge>
-<Badge variant="verified">Verified</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
 ```
 
 ### With Icons
 ```tsx
-import { Check, ArrowRight, BadgeCheck } from "lucide-react"
+import { Check, ArrowRight } from "lucide-react"
 
 // Left icon
 <Badge className="gap-1">
@@ -110,11 +112,6 @@ import { Check, ArrowRight, BadgeCheck } from "lucide-react"
   <ArrowRight className="size-3" />
 </Badge>
 
-// Manual verified badge (if not using verified variant)
-<Badge className="gap-1">
-  <BadgeCheck className="size-3" />
-  Verified
-</Badge>
 ```
 
 ### Notification Count (Badge Number)

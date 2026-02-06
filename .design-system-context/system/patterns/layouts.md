@@ -38,7 +38,7 @@ import { SidebarProvider, Sidebar, SidebarContent } from "@/components/ui/sideba
 
 ## Page with Header
 
-Standard page layout with a sticky header.
+Standard page layout with a sticky header. Admin shell pages must use this pattern.
 
 ```tsx
 <div className="min-h-screen flex flex-col">

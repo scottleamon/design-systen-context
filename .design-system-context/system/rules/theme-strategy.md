@@ -229,6 +229,15 @@ Components should always use semantic tokens, which automatically adapt to the a
 
 ---
 
+## Admin Shell Header (Required)
+
+All Admin shell pages must use the sticky header pattern from `system/patterns/layouts.md`:
+- `sticky top-0 z-50`
+- `bg-background/95 backdrop-blur`
+- `h-16` with `border-b`
+
+---
+
 ## Shared Component Library
 
 When building shared components that work across all themes:
