@@ -32,25 +32,23 @@ export default async function Sidebar() {
     })
 
     return (
-        <aside className="w-72 border-r border-zinc-200 dark:border-zinc-800/50 bg-zinc-50 dark:bg-zinc-950/50 backdrop-blur-xl flex flex-col h-screen sticky top-0">
-            <div className="p-8 pb-4">
-                <Link href="/" className="flex items-center gap-3 font-bold text-xl tracking-tight text-zinc-900 dark:text-white group">
-                    <div className="size-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-                        <div className="size-5 bg-white/20 backdrop-blur-sm rotate-45 rounded-md border border-white/30" />
+        <aside className="w-64 border-r border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 flex flex-col h-screen sticky top-0">
+            <div className="px-6 pt-6 pb-2">
+                <Link href="/" className="flex items-center gap-2.5 font-semibold text-base tracking-tight text-zinc-900 dark:text-white group">
+                    <div className="size-8 bg-zinc-900 dark:bg-white rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <div className="size-3.5 bg-white/90 dark:bg-zinc-900/90 rotate-45 rounded-[3px]" />
                     </div>
-                    <span className="font-['Outfit']">Workbench</span>
+                    <span className="tracking-[-0.01em]">Workbench</span>
                 </Link>
             </div>
 
-            <nav className="flex-1 overflow-y-auto px-4 py-6 scrollbar-hide">
-                <div className="space-y-1 mb-6">
+            <nav className="flex-1 overflow-y-auto px-3 py-4">
+                <div className="mb-4">
                     <Link
                         href="/"
-                        className="group flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all duration-200"
+                        className="group flex items-center gap-2.5 px-3 py-2 text-[13px] font-medium text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-all duration-150"
                     >
-                        <div className="size-8 rounded-lg bg-zinc-200 dark:bg-zinc-900 group-hover:bg-indigo-500/10 flex items-center justify-center transition-colors">
-                            <Home className="size-4 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors" />
-                        </div>
+                        <Home className="size-4 text-zinc-500 dark:text-zinc-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
                         Overview
                     </Link>
                 </div>
@@ -65,7 +63,7 @@ export default async function Sidebar() {
                 ))}
             </nav>
 
-            <div className="p-6 mt-auto">
+            <div className="px-4 py-4 mt-auto border-t border-zinc-200 dark:border-zinc-800">
                 <ThemeToggle />
             </div>
         </aside>

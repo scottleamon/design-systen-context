@@ -1,0 +1,35 @@
+---
+description: Rules for icon usage and Lucide naming
+globs: ["**/*.tsx"]
+alwaysApply: false
+---
+
+# Icon Guidelines
+
+## Mandatory Library
+- **Use ONLY Lucide React.** Never introduce FontAwesome, Heroicons, or others.
+
+## Critical Rule: No Hallucinations
+Reference `design-system-context/system/icons/inventory.md` for verified names:
+- ❌ `<Spinner />` → ✅ `<LoaderCircle className="animate-spin" />`
+- ❌ `<Close />` → ✅ `<X />`
+- ❌ `<Trash />` → ✅ `<Trash2 />`
+- ❌ `<Hamburger />` → ✅ `<Menu />`
+- ❌ `<Caret />` → ✅ `<ChevronDown />`
+
+## Sizing Rules
+| Size | Class | Use For |
+|------|-------|---------|
+| 16px | `size-4` | Inline (Default) |
+| 20px | `size-5` | Medium emphasis |
+| 24px | `size-6` | Navigation / Sidebar |
+| 48px | `size-12` | Empty states / Hero |
+
+## Implementation Pattern
+```tsx
+// Standard usage with text
+<Button className="gap-2">
+  <IconName className="size-4" />
+  Label
+</Button>
+```

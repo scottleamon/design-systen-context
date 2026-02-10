@@ -1,0 +1,33 @@
+---
+description: Mandatory tech stack and project architecture rules
+globs: ["**/*.ts", "**/*.tsx", "package.json"]
+alwaysApply: true
+---
+
+# Tech Stack & Architecture
+
+## Mandatory Stack
+
+Reference `design-system-context/system/rules/tech-stack.md` for full details:
+
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS
+- **Components:** shadcn/ui + Radix UI
+- **Icons:** Lucide React
+- **Forms:** react-hook-form + zod
+
+## Project Structure
+
+Reference `design-system-context/system/rules/project-structure.md` for directory layout:
+
+- `@/components/ui/` - Atomic shadcn primitives
+- `@/components/shared/` - Reusable domain-agnostic components
+- `@/lib/` - Utilities and constants
+- `@/hooks/` - Custom React hooks
+
+## Global Implementation Rules
+
+- **Strict Types:** No `any`. Always define interfaces for props.
+- **Path Aliases:** Always use `@/` aliases. Never use relative paths `../../`.
+- **Forms:** Always wrap in a `Card`.
+- **Accessibility:** Interactive elements must have focus states and appropriate ARIA attributes.

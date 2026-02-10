@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -7,11 +7,6 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({
     subsets: ["latin"],
     variable: '--font-inter',
-});
-
-const outfit = Outfit({
-    subsets: ["latin"],
-    variable: '--font-outfit',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${inter.variable} ${outfit.variable} font-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-300 min-h-screen flex selection:bg-indigo-500/30`}>
+            <body className={`${inter.variable} font-sans antialiased bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-300 min-h-screen flex selection:bg-indigo-500/20`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"

@@ -11,7 +11,6 @@ const config: Config = {
         extend: {
             fontFamily: {
                 sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
-                heading: ["var(--font-outfit)", "ui-sans-serif", "system-ui"],
             }
         },
     },

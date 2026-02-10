@@ -2,7 +2,7 @@ export interface TodoItem {
     id: string
     title: string
     description: string
-    category: "a11y" | "decisions" | "governance" | "tokens" | "components" | "patterns"
+    category: "a11y" | "rules" | "tokens" | "components" | "patterns"
     priority: "high" | "medium" | "low"
     filePath: string
     status: "needs-input" | "in-progress" | "complete"
@@ -47,59 +47,12 @@ export const systemTodos: TodoItem[] = [
         status: "needs-input",
     },
 
-    // Decisions - HIGH PRIORITY
-    {
-        id: "decision-color-system",
-        title: "Color System Rationale",
-        description: "Primary color rationale, color relationships, a11y considerations",
-        category: "decisions",
-        priority: "high",
-        filePath: "system/decisions/color-system.md",
-        status: "needs-input",
-    },
-    {
-        id: "decision-token-scale",
-        title: "Token Scale Rationale",
-        description: "4px base unit rationale, breakpoints, border radius, typography scale",
-        category: "decisions",
-        priority: "high",
-        filePath: "system/decisions/token-scale.md",
-        status: "needs-input",
-    },
-    {
-        id: "decision-component-library",
-        title: "Component Library Choice",
-        description: "shadcn/ui + Radix rationale, alternatives evaluated, trade-offs",
-        category: "decisions",
-        priority: "high",
-        filePath: "system/decisions/component-library.md",
-        status: "needs-input",
-    },
-    {
-        id: "decision-typography",
-        title: "Typography Decisions",
-        description: "Adelle Sans rationale, licensing, fallback strategy",
-        category: "decisions",
-        priority: "high",
-        filePath: "system/decisions/typography.md",
-        status: "needs-input",
-    },
-    {
-        id: "decision-multi-theme",
-        title: "Multi-Theme Architecture",
-        description: "3-theme rationale, Member/Campus/Admin strategy",
-        category: "decisions",
-        priority: "high",
-        filePath: "system/decisions/multi-theme.md",
-        status: "needs-input",
-    },
-
     // Governance - MEDIUM PRIORITY
     {
         id: "governance-approval",
         title: "Governance Approval Authority",
         description: "Who approves variants, tokens, exceptions; enforcement tooling",
-        category: "governance",
+        category: "rules",
         priority: "medium",
         filePath: "system/rules/governance.md",
         status: "needs-input",

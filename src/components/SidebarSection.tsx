@@ -44,23 +44,23 @@ export default function SidebarSection({ category, docs, defaultOpen = false }: 
     const Icon = iconsMap[category] || BookOpen
 
     return (
-        <div className="mb-6">
+        <div className="mb-3">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full px-4 py-2 text-[11px] font-bold text-zinc-500 uppercase tracking-[0.2em] flex items-center justify-between hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors rounded-lg hover:bg-zinc-100 dark:hover:bg-white/[0.02]"
+                className="w-full px-3 py-1.5 text-[11px] font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-[0.08em] flex items-center justify-between hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors rounded-md"
             >
                 <span className="flex items-center gap-2">
                     <Icon className="size-3.5" />
                     {category}
                 </span>
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-1.5">
                     <span className="text-[10px] font-medium text-zinc-400 dark:text-zinc-600 tabular-nums">
                         {docs.length}
                     </span>
                     {isOpen ? (
-                        <ChevronDown className="size-3.5 text-zinc-400 dark:text-zinc-600" />
+                        <ChevronDown className="size-3 text-zinc-400 dark:text-zinc-600" />
                     ) : (
-                        <ChevronRight className="size-3.5 text-zinc-400 dark:text-zinc-600" />
+                        <ChevronRight className="size-3 text-zinc-400 dark:text-zinc-600" />
                     )}
                 </span>
             </button>
@@ -70,15 +70,15 @@ export default function SidebarSection({ category, docs, defaultOpen = false }: 
                     isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                 }`}
             >
-                <div className="space-y-0.5 pt-2">
+                <div className="space-y-px pt-1">
                     {docs.map((doc) => (
                         <Link
                             key={doc.slug}
                             href={`/docs/${category}/${doc.slug}`}
-                            className="group flex items-center justify-between px-4 py-2 text-[13px] font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white rounded-xl hover:bg-zinc-100 dark:hover:bg-white/[0.03] transition-all duration-200 border border-transparent hover:border-zinc-200 dark:hover:border-white/[0.05]"
+                            className="group flex items-center justify-between px-3 py-1.5 text-[13px] text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-md hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-all duration-150"
                         >
                             {doc.title}
-                            <ChevronRight className="size-3 opacity-0 group-hover:opacity-40 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                            <ChevronRight className="size-3 opacity-0 group-hover:opacity-30 -translate-x-1 group-hover:translate-x-0 transition-all" />
                         </Link>
                     ))}
                 </div>

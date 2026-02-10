@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 
-const CONTEXT_DIR = path.join(process.cwd(), ".design-system-context")
+const CONTEXT_DIR = path.join(process.cwd(), "design-system-context")
 const SYSTEM_DIR = path.join(CONTEXT_DIR, "system")
 
 export interface DocMetadata {
@@ -15,8 +15,8 @@ export interface DocMetadata {
 // Categories under system/ folder
 const SYSTEM_CATEGORIES = ["rules", "tokens", "components", "patterns", "icons", "decisions", "a11y"]
 
-// Categories at root of .design-system-context/
-const ROOT_CATEGORIES = ["tasks"]
+// Categories at root of design-system-context/
+export const ROOT_CATEGORIES = ["tasks"]
 
 export async function getDocsHierarchy() {
     const hierarchy: Record<string, DocMetadata[]> = {}

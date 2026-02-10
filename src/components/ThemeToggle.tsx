@@ -15,26 +15,26 @@ export function ThemeToggle() {
 
     if (!mounted) {
         return (
-            <div className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+            <div className="flex items-center justify-between px-3 py-2">
                 <div className="flex items-center gap-2">
-                    <Sun className="size-4 text-zinc-400" />
-                    <span className="text-xs font-medium text-zinc-500">Theme</span>
+                    <Sun className="size-3.5 text-zinc-400" />
+                    <span className="text-[11px] text-zinc-400">Theme</span>
                 </div>
-                <div className="w-9 h-5 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+                <div className="w-8 h-[18px] rounded-full bg-zinc-200 dark:bg-zinc-800" />
             </div>
         )
     }
 
     return (
-        <div className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+        <div className="flex items-center justify-between px-3 py-2">
             <div className="flex items-center gap-2">
                 {isDark ? (
-                    <Moon className="size-4 text-zinc-500" />
+                    <Moon className="size-3.5 text-zinc-500" />
                 ) : (
-                    <Sun className="size-4 text-amber-500" />
+                    <Sun className="size-3.5 text-zinc-400" />
                 )}
-                <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
-                    {isDark ? "Dark" : "Light"} mode
+                <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                    {isDark ? "Dark" : "Light"}
                 </span>
             </div>
             <button
@@ -42,13 +42,13 @@ export function ThemeToggle() {
                 aria-checked={isDark}
                 aria-label="Toggle dark mode"
                 onClick={() => setTheme(isDark ? "light" : "dark")}
-                className={`relative w-9 h-5 rounded-full transition-colors ${
-                    isDark ? "bg-indigo-600" : "bg-zinc-300"
+                className={`relative w-8 h-[18px] rounded-full transition-colors ${
+                    isDark ? "bg-zinc-600" : "bg-zinc-300"
                 }`}
             >
                 <span
-                    className={`absolute top-0.5 left-0.5 size-4 rounded-full bg-white shadow-sm transition-transform ${
-                        isDark ? "translate-x-4" : "translate-x-0"
+                    className={`absolute top-[3px] left-[3px] size-3 rounded-full bg-white shadow-sm transition-transform ${
+                        isDark ? "translate-x-[14px]" : "translate-x-0"
                     }`}
                 />
             </button>
