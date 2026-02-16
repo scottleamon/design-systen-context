@@ -1,5 +1,8 @@
 import { getDocContent, ROOT_CATEGORIES } from "@/lib/system"
 import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
+import rehypeRaw from "rehype-raw"
+import rehypeSanitize from "rehype-sanitize"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Clock } from "lucide-react"
 import Link from "next/link"
@@ -47,8 +50,13 @@ export default async function DocPage({ params }: PageProps) {
                     </h1>
                 </header>
 
-                <article className="prose dark:prose-invert max-w-none">
-                    <ReactMarkdown>{doc.content}</ReactMarkdown>
+                <article className="prose dark:prose-invert max-w-none prose-table:border-collapse prose-table:w-full prose-th:border prose-th:border-zinc-200 dark:prose-th:border-zinc-800 prose-th:bg-zinc-50 dark:prose-th:bg-zinc-900 prose-th:px-4 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-zinc-900 dark:prose-th:text-white prose-td:border prose-td:border-zinc-200 dark:prose-td:border-zinc-800 prose-td:px-4 prose-td:py-2 prose-td:text-zinc-700 dark:prose-td:text-zinc-300 prose-code:before:content-none prose-code:after:content-none prose-code:bg-zinc-100 dark:prose-code:bg-zinc-900 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[13px] prose-code:font-mono">
+                    <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                    >
+                        {doc.content}
+                    </ReactMarkdown>
                 </article>
 
                 <footer className="mt-16 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row md:items-center justify-between gap-3">
