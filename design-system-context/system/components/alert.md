@@ -2,8 +2,8 @@
 
 > [!NOTE]
 > **Theme-Aware Component**: Alert icon colors adapt to the active theme when using the `default` variant.
-> - Member theme: Navy blue icon (`#19518B`)
-> - Campus theme: Green icon (`#487537`)
+> - Higher Ed theme: Navy blue icon (`#19518B`)
+> - K-12 theme: Navy blue icon (`#19518B`) *(placeholder — K-12-specific colors coming later)*
 > - Admin theme: Neutral icon (`#18181B`)
 > - Destructive variant uses red across all themes for consistency.
 
@@ -37,7 +37,7 @@ interface AlertDescriptionProps {
 
 | Variant | Icon Color | Title Color | Description Color | Theme Behavior |
 |---------|------------|-------------|-------------------|----------------|
-| `default` | `text-primary` | `text-foreground` | `text-muted-foreground` | Icon adapts to theme (navy/green/neutral) |
+| `default` | `text-primary` | `text-foreground` | `text-muted-foreground` | Icon adapts to theme (navy/neutral) |
 | `destructive` | `text-destructive` | `text-destructive` | `text-destructive` | Red across all themes |
 
 ### Choosing a Variant

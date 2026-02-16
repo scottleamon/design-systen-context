@@ -107,8 +107,8 @@ Evaluate existing UI code for design system compliance, consistency, accessibili
 ## Theme Compatibility Checklist
 
 - [ ] No theme-specific hardcoded colors
-- [ ] Component looks correct in Member theme (blue)
-- [ ] Component looks correct in Campus theme (green)
+- [ ] Component looks correct in Higher Ed theme (blue)
+- [ ] Component looks correct in K-12 theme (blue — placeholder)
 - [ ] Component looks correct in Admin theme (neutral)
 - [ ] Focus rings adapt to theme
 

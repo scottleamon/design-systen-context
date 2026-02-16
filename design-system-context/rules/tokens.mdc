@@ -11,21 +11,21 @@ alwaysApply: false
 
 ## Multi-Theme System (IMPORTANT)
 This design system supports **3 distinct themes** for 3 web properties:
-- **Member (Blue)** - `#19518B` primary - Member/patient portal
-- **Campus (Green)** - `#487537` primary - Campus/university portal
+- **Higher Ed (Blue)** - `#19518B` primary - Higher Ed portal (university, campus, members)
+- **K-12 (Blue)** - `#19518B` primary - K-12 school portal *(placeholder — K-12-specific colors coming later)*
 - **Admin (Neutral)** - `#18181B` primary - Internal admin dashboard
 
 **When building features:**
 1. **Ask which property/theme** if the context is unclear
 2. **Use semantic tokens** (`bg-primary`, `text-accent`) not hard-coded colors
-3. **Default to Member theme** for examples unless specified otherwise
+3. **Default to Higher Ed theme** for examples unless specified otherwise
 
 See `design-system-context/system/tokens/themes.md` and `design-system-context/system/rules/theme-strategy.md` for complete details.
 
 ## Color Tokens
 Reference `design-system-context/system/tokens/themes.md` for theme-specific colors, and `design-system-context/system/tokens/colors.md` for:
 - Semantic tokens: `bg-primary`, `text-muted-foreground`, `border-border`
-- **Theme-aware colors:** Primary color adapts based on active theme (Member blue, Campus green, Admin neutral)
+- **Theme-aware colors:** Primary color adapts based on active theme (Higher Ed blue, K-12 blue, Admin neutral)
 - **Never hard-code theme colors:** Use `bg-primary` not `bg-[#19518B]`
 
 ## Typography Tokens

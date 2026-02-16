@@ -9,8 +9,8 @@ AI agents (Cursor, Claude, Antigravity) use this repo to understand *how* to bui
 
 > [!NOTE]
 > **Multi-Property System:** This design system supports **3 distinct themes** for 3 web properties:
-> - **Member (Blue)** - Patient/member-facing portal
-> - **Campus (Green)** - University/campus administrator portal
+> - **Higher Ed (Blue)** - Higher Ed portal (university, campus, members)
+> - **K-12 (Blue)** - K-12 school portal *(placeholder — K-12-specific colors coming later)*
 > - **Admin (Neutral)** - Internal admin dashboard
 >
 > When building features, always clarify which property you're targeting. See [Theme Strategy](./system/rules/theme-strategy.md).
@@ -123,7 +123,7 @@ For the governance process around new decisions, see [decisions/README.md](./sys
 - ❌ Arbitrary sizing (Use `w-64`, not `w-[250px]`)
 - ❌ Mixing icon libraries (Lucide only)
 - ❌ Confusing `default` vs `primary` (Shadcn uses `variant="default"` for primary buttons)
-- ❌ Building without knowing the theme (Always clarify: Member/Campus/Admin?)
+- ❌ Building without knowing the theme (Always clarify: Higher Ed/K-12/Admin?)
 - ❌ Theme-specific hard-coding (Use semantic tokens that adapt across themes)
 
 ---

@@ -15,7 +15,7 @@ Before creating a new component:
 - [ ] Search codebase for similar implementations
 
 ### 2. Clarify Theme Context
-- [ ] Which property is this for? (Member/Campus/Admin/All)
+- [ ] Which property is this for? (Higher Ed/K-12/Admin/All)
 - [ ] Will it need theme-aware styling?
 
 ### 3. Identify Composition Opportunities
@@ -59,8 +59,8 @@ Reference [rules/accessibility.md](../system/rules/accessibility.md):
 - [ ] Focus management
 
 ### Step 6: Test Across Themes
-- [ ] Verify component works in Member theme
-- [ ] Verify component works in Campus theme
+- [ ] Verify component works in Higher Ed theme
+- [ ] Verify component works in K-12 theme
 - [ ] Verify component works in Admin theme
 
 ---

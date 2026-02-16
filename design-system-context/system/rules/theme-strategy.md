@@ -10,35 +10,41 @@ alwaysApply: false
 
 This design system supports **3 distinct themes** for 3 different web properties. This document provides guidance on selecting the appropriate theme and implementing theme switching.
 
+> [!NOTE]
+> **K-12 theme tokens are currently identical to Higher Ed** and will be updated with K-12-specific branding at a later date. The theme infrastructure is in place; only the color values will change.
+
 ---
 
 ## The 3 Properties & Their Themes
 
-### 1. Member Portal (Blue Theme)
-**Target Users**: Patients, members, end-users  
-**Brand Identity**: Trustworthy, healthcare-focused, accessible  
+### 1. Higher Ed (Blue Theme)
+**Target Users**: University students, campus administrators, staff, members  
+**Brand Identity**: Trustworthy, healthcare-focused, education-oriented  
 **Primary Color**: `#19518B` (Navy Blue)  
-**Routes**: `/member/*`, `/patient/*`, `/app/*`
+**Routes**: `/higher-ed/*`, `/campus/*`, `/member/*`, `/app/*`
 
 **When to use**:
-- Building patient-facing features
+- Building higher education portal features
+- University/campus administrator tools
+- Student wellness management
 - Member self-service portals
 - Appointment booking interfaces
-- Health record access
-- Member communication features
+- Campus analytics and reporting
 
-### 2. Campus Portal (Green Theme)
-**Target Users**: University administrators, campus staff  
-**Brand Identity**: Educational, growth-oriented, collaborative  
-**Primary Color**: `#487537` (Forest Green)  
-**Routes**: `/campus/*`, `/university/*`, `/staff/*`
+### 2. K-12 (Blue Theme — placeholder)
+**Target Users**: K-12 school administrators, counselors, staff  
+**Brand Identity**: Youth-focused, supportive, accessible  
+**Primary Color**: `#19518B` (Navy Blue) — *placeholder; K-12-specific colors coming later*  
+**Routes**: `/k12/*`, `/school/*`
 
 **When to use**:
-- Building campus administrator features
-- University staff tools
-- Student wellness management
-- Campus analytics and reporting
-- Staff communication features
+- Building K-12 school portal features
+- School counselor and staff tools
+- Student support management
+- K-12 analytics and reporting
+
+> [!IMPORTANT]
+> K-12 currently shares Higher Ed's token values. When K-12-specific tokens are released, components built with semantic tokens (`bg-primary`, etc.) will automatically adapt — no code changes needed.
 
 ### 3. Admin Dashboard (Neutral Theme)
 **Target Users**: Internal staff, system administrators  
@@ -65,14 +71,14 @@ This design system supports **3 distinct themes** for 3 different web properties
        ┌───────┴────────┬──────────────┐
        │                │              │
        ▼                ▼              ▼
-  Patients/        University      Internal
-  Members          Staff           Staff
+  Higher Ed         K-12           Internal
+  Users             Users          Staff
        │                │              │
        ▼                ▼              ▼
-  ┌─────────┐    ┌──────────┐   ┌──────────┐
-  │ MEMBER  │    │  CAMPUS  │   │  ADMIN   │
-  │  (Blue) │    │ (Green)  │   │ (Neutral)│
-  └─────────┘    └──────────┘   └──────────┘
+  ┌──────────┐   ┌──────────┐   ┌──────────┐
+  │ HIGHER   │   │   K-12   │   │  ADMIN   │
+  │ ED (Blue)│   │  (Blue)  │   │ (Neutral)│
+  └──────────┘   └──────────┘   └──────────┘
 ```
 
 ---
@@ -87,14 +93,14 @@ Automatically select theme based on the URL route:
 // app/layout.tsx or theme provider
 import { usePathname } from 'next/navigation'
 
-function getThemeFromPath(pathname: string): 'member' | 'campus' | 'admin' {
-  if (pathname.startsWith('/campus') || pathname.startsWith('/university')) {
-    return 'campus'
+function getThemeFromPath(pathname: string): 'higher-ed' | 'k12' | 'admin' {
+  if (pathname.startsWith('/k12') || pathname.startsWith('/school')) {
+    return 'k12'
   }
   if (pathname.startsWith('/admin') || pathname.startsWith('/internal')) {
     return 'admin'
   }
-  return 'member' // Default to member theme
+  return 'higher-ed' // Default to Higher Ed theme
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -115,16 +121,16 @@ Select theme based on subdomain or environment:
 
 ```tsx
 // lib/theme.ts
-export function getThemeFromEnvironment(): 'member' | 'campus' | 'admin' {
+export function getThemeFromEnvironment(): 'higher-ed' | 'k12' | 'admin' {
   const hostname = window.location.hostname
   
-  if (hostname.includes('campus') || hostname.includes('university')) {
-    return 'campus'
+  if (hostname.includes('k12') || hostname.includes('school')) {
+    return 'k12'
   }
   if (hostname.includes('admin') || hostname.includes('internal')) {
     return 'admin'
   }
-  return 'member'
+  return 'higher-ed'
 }
 ```
 
@@ -134,14 +140,14 @@ Select theme based on the logged-in user's role:
 
 ```tsx
 // lib/theme.ts
-export function getThemeFromUser(user: User): 'member' | 'campus' | 'admin' {
-  if (user.role === 'campus_admin' || user.role === 'staff') {
-    return 'campus'
+export function getThemeFromUser(user: User): 'higher-ed' | 'k12' | 'admin' {
+  if (user.role === 'k12_admin' || user.role === 'counselor') {
+    return 'k12'
   }
   if (user.role === 'system_admin' || user.role === 'internal') {
     return 'admin'
   }
-  return 'member'
+  return 'higher-ed'
 }
 ```
 
@@ -154,28 +160,32 @@ export function getThemeFromUser(user: User): 'member' | 'campus' | 'admin' {
 ```css
 /* globals.css */
 
-/* Default/Member Theme (Blue) */
+/* Default/Higher Ed Theme (Blue) */
 :root,
-.theme-member {
+.theme-higher-ed {
   --primary: 210 65% 32%;          /* #19518B */
   --primary-foreground: 0 0% 98%;  /* #FAFAFA */
   --accent: 214 65% 94%;           /* #E4EEFA */
   --accent-foreground: 210 65% 32%; /* #19518B */
+  --accent-border: 214 60% 87%;    /* #C3DBF4 */
+  --ring: 240 4% 65%;              /* #A1A1AA */
   
   /* Shared tokens */
-  --background: 0 0% 100%;
+  --background: 0 0% 98%;          /* #FAFAFA */
   --foreground: 240 10% 3.9%;
   --destructive: 0 84.2% 60.2%;
   --muted: 240 4.8% 95.9%;
   --border: 240 5.9% 90%;
 }
 
-/* Campus Theme (Green) */
-.theme-campus {
-  --primary: 100 36% 40%;          /* #487537 */
+/* K-12 Theme (Blue — placeholder, same as Higher Ed) */
+.theme-k12 {
+  --primary: 210 65% 32%;          /* #19518B */
   --primary-foreground: 0 0% 98%;  /* #FAFAFA */
-  --accent: 100 45% 92%;           /* #E8F4E4 */
-  --accent-foreground: 100 36% 40%; /* #487537 */
+  --accent: 214 65% 94%;           /* #E4EEFA */
+  --accent-foreground: 210 65% 32%; /* #19518B */
+  --accent-border: 214 60% 87%;    /* #C3DBF4 */
+  --ring: 240 4% 65%;              /* #A1A1AA */
 }
 
 /* Admin Theme (Neutral) */
@@ -184,19 +194,20 @@ export function getThemeFromUser(user: User): 'member' | 'campus' | 'admin' {
   --primary-foreground: 0 0% 98%;  /* #FAFAFA */
   --accent: 240 5% 96%;            /* #F4F4F5 */
   --accent-foreground: 240 6% 10%; /* #18181B */
+  --accent-border: 240 6% 90%;     /* #E4E4E7 */
+  --ring: 240 4% 65%;              /* #A1A1AA */
 }
 
 /* Dark mode variants */
-.dark.theme-member {
+.dark.theme-higher-ed,
+.dark.theme-k12 {
   --primary: 207 67% 60%;          /* #529DDE */
-}
-
-.dark.theme-campus {
-  --primary: 100 35% 59%;          /* #84B771 */
+  --ring: 240 4% 46%;              /* #71717A */
 }
 
 .dark.theme-admin {
   --primary: 240 5% 90%;           /* #E4E4E7 */
+  --ring: 240 4% 46%;              /* #71717A */
 }
 ```
 
@@ -218,9 +229,8 @@ Components should always use semantic tokens, which automatically adapt to the a
 ### Avoiding Hard-Coded Colors
 
 ```tsx
-// ❌ WRONG - Hard-coded to Member theme
+// ❌ WRONG - Hard-coded to Higher Ed theme
 <div className="bg-[#19518B]">This is always blue</div>
-<Button className="text-[#487537]">This is always green</Button>
 
 // ✅ CORRECT - Use semantic tokens
 <div className="bg-primary">Adapts to theme</div>
@@ -243,7 +253,7 @@ All Admin shell pages must use the sticky header pattern from `system/patterns/l
 When building shared components that work across all themes:
 
 1. **Always use semantic tokens**: `bg-primary`, `text-accent-foreground`, etc.
-2. **Test in all 3 themes**: Verify the component looks good in Member, Campus, and Admin
+2. **Test in all 3 themes**: Verify the component looks good in Higher Ed, K-12, and Admin
 3. **Document theme-specific behavior**: If colors affect meaning, document it
 4. **Avoid brand-specific terminology**: Use "primary" not "blue" in code/docs
 
@@ -273,8 +283,8 @@ When building features, AI agents should:
 
 ### 1. Always Ask About Theme Context
 If the target property/theme is unclear, ask:
-- "Which property is this feature for? (Member/Campus/Admin)"
-- "Should this use the Member (blue), Campus (green), or Admin (neutral) theme?"
+- "Which property is this feature for? (Higher Ed/K-12/Admin)"
+- "Should this use the Higher Ed (blue), K-12 (blue), or Admin (neutral) theme?"
 
 ### 2. Use Semantic Tokens, Not Colors
 Never use hard-coded colors:
@@ -286,11 +296,11 @@ Never use hard-coded colors:
 <Button variant="default">
 ```
 
-### 3. Default to Member Theme for Examples
-When showing examples without context, default to Member theme and note:
+### 3. Default to Higher Ed Theme for Examples
+When showing examples without context, default to Higher Ed theme and note:
 ```tsx
-// Example using Member theme (blue)
-// For Campus (green) or Admin (neutral), the primary color will adapt
+// Example using Higher Ed theme (blue)
+// For K-12 or Admin, the primary color will adapt
 <Button variant="default">Primary Action</Button>
 ```
 
@@ -298,8 +308,8 @@ When showing examples without context, default to Member theme and note:
 If a feature behaves differently per theme, document it:
 ```md
 **Theme Behavior**:
-- Member: Blue accent for notifications
-- Campus: Green accent for notifications  
+- Higher Ed: Navy blue accent for notifications
+- K-12: Navy blue accent (placeholder — will update)
 - Admin: Gray accent for notifications
 ```
 
@@ -315,12 +325,12 @@ To test a component in all 3 themes:
 export function ThemeTestHarness({ children }: { children: React.ReactNode }) {
   return (
     <div className="space-y-8">
-      <div className="theme-member p-8 border">
-        <h3 className="mb-4">Member Theme</h3>
+      <div className="theme-higher-ed p-8 border">
+        <h3 className="mb-4">Higher Ed Theme</h3>
         {children}
       </div>
-      <div className="theme-campus p-8 border">
-        <h3 className="mb-4">Campus Theme</h3>
+      <div className="theme-k12 p-8 border">
+        <h3 className="mb-4">K-12 Theme</h3>
         {children}
       </div>
       <div className="theme-admin p-8 border">
@@ -338,7 +348,7 @@ When writing tests, consider testing components in multiple theme contexts:
 ```tsx
 describe('Button', () => {
   it('renders with correct theme colors', () => {
-    const themes = ['member', 'campus', 'admin']
+    const themes = ['higher-ed', 'k12', 'admin']
     
     themes.forEach(theme => {
       const { container } = render(
@@ -372,6 +382,13 @@ describe('Button', () => {
 
 3. **Test in all themes** to ensure nothing breaks
 
+### If You Have Old Theme Class Names
+
+Replace old theme class names with new ones:
+- `.theme-member` → `.theme-higher-ed`
+- `.theme-campus` → `.theme-higher-ed` (Campus merged into Higher Ed)
+- `.theme-admin` → `.theme-admin` (unchanged)
+
 ---
 
 ## Common Questions
@@ -388,19 +405,22 @@ describe('Button', () => {
 ### Q: How do I preview all themes during development?
 **A**: Use the `ThemeTestHarness` component shown above, or add theme switcher UI in development mode.
 
+### Q: Why do Higher Ed and K-12 look the same?
+**A**: K-12 currently uses placeholder tokens identical to Higher Ed. K-12-specific branding colors will be introduced in a future update. Components built with semantic tokens will automatically adapt when the K-12 tokens change.
+
 ---
 
 ## Summary
 
 | Decision Point | Recommendation |
 |---------------|----------------|
-| **Route pattern** | Use `/member/*`, `/campus/*`, `/admin/*` |
+| **Route pattern** | Use `/higher-ed/*`, `/k12/*`, `/admin/*` |
 | **Component styling** | Always use semantic tokens (`bg-primary`, etc.) |
-| **Default theme** | Member (blue) for examples and defaults |
+| **Default theme** | Higher Ed (blue) for examples and defaults |
 | **Testing** | Verify components in all 3 themes |
 | **New colors** | Add to theme tokens, don't hard-code |
 
 ---
 
-*See also*: [`themes.md`](../system/tokens/themes.md) for complete theme specifications  
-*Last updated*: February 4, 2026
+*See also*: [`themes.md`](../tokens/themes.md) for complete theme specifications  
+*Last updated*: February 13, 2026

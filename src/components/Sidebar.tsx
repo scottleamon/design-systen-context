@@ -4,9 +4,8 @@ import { Home } from "lucide-react"
 import SidebarSection from "./SidebarSection"
 import { ThemeToggle } from "./ThemeToggle"
 
-// Define category order for consistent display
+// Define category order for consistent display (tasks rendered separately at bottom)
 const categoryOrder = [
-    "tasks",      // Workflow/tasks first - how to use the system
     "rules",      // Core rules
     "tokens",     // Design tokens
     "components", // Component docs
@@ -17,7 +16,7 @@ const categoryOrder = [
 ]
 
 // Categories that should be expanded by default
-const defaultOpenCategories = ["tasks", "rules"]
+const defaultOpenCategories = ["rules"]
 
 export default async function Sidebar() {
     const hierarchy = await getDocsHierarchy()
@@ -53,7 +52,7 @@ export default async function Sidebar() {
                     </Link>
                 </div>
 
-                {categories.map((category) => (
+                {categories.filter(c => c !== "tasks").map((category) => (
                     <SidebarSection
                         key={category}
                         category={category}
@@ -61,6 +60,17 @@ export default async function Sidebar() {
                         defaultOpen={defaultOpenCategories.includes(category)}
                     />
                 ))}
+
+                {hierarchy["tasks"] && (
+                    <>
+                        <div className="my-3 mx-3 border-t border-zinc-200 dark:border-zinc-800" />
+                        <SidebarSection
+                            category="tasks"
+                            docs={hierarchy["tasks"]}
+                            defaultOpen={false}
+                        />
+                    </>
+                )}
             </nav>
 
             <div className="px-4 py-4 mt-auto border-t border-zinc-200 dark:border-zinc-800">

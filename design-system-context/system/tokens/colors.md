@@ -5,8 +5,8 @@
 
 > [!IMPORTANT]
 > **Multi-Theme System**: This design system supports **3 distinct themes** for 3 web properties:
-> - **Member (Blue)**: Navy blue primary (`#19518B`) - Member portal
-> - **Campus (Green)**: Forest green primary (`#487537`) - Campus portal  
+> - **Higher Ed (Blue)**: Navy blue primary (`#19518B`) - Higher Ed portal (consolidates former Member + Campus)
+> - **K-12 (Blue)**: Navy blue primary (`#19518B`) - K-12 portal *(placeholder — K-12-specific colors coming later)*
 > - **Admin (Neutral)**: Near black primary (`#18181B`) - Admin dashboard
 >
 > See [`themes.md`](./themes.md) for complete theme specifications and usage guidelines.
@@ -15,7 +15,7 @@
 
 This design system uses CSS custom properties with semantic naming. Colors automatically adapt between light and dark modes **and across themes**.
 
-The colors shown below represent the **Member (Blue) theme** as the default reference. For Campus (Green) and Admin (Neutral) theme colors, refer to [`themes.md`](./themes.md).
+The colors shown below represent the **Higher Ed (Blue) theme** as the default reference. For Admin (Neutral) theme colors, refer to [`themes.md`](./themes.md).
 
 ---
 
@@ -23,8 +23,8 @@ The colors shown below represent the **Member (Blue) theme** as the default refe
 
 | Theme | Primary (Light) | Primary (Dark) | Accent (Light) | Use Case |
 |-------|----------------|----------------|----------------|----------|
-| **Member** | `#19518B` Navy | `#529DDE` Light Blue | `#E4EEFA` Pale Blue | Member portal |
-| **Campus** | `#487537` Green | `#84B771` Light Green | `#E8F4E4` Pale Green | Campus portal |
+| **Higher Ed** | `#19518B` Navy | `#529DDE` Light Blue | `#E4EEFA` Pale Blue | Higher Ed portal |
+| **K-12** | `#19518B` Navy | `#529DDE` Light Blue | `#E4EEFA` Pale Blue | K-12 portal *(placeholder)* |
 | **Admin** | `#18181B` Black | `#E4E4E7` Light Gray | `#F4F4F5` Light Gray | Admin dashboard |
 
 ---
@@ -33,42 +33,115 @@ The colors shown below represent the **Member (Blue) theme** as the default refe
 
 These tokens change based on the active theme. All other tokens are shared across themes.
 
-### Member (Blue) Theme
+### Higher Ed (Blue) Theme
 | Token | Light Mode | Dark Mode |
 |-------|-----------|-----------|
 | primary | `#19518B` (Navy Blue) | `#529DDE` (Light Blue) |
-| accent | `#E4EEFA` (Pale Blue) | `#1E3A5F` (Dark Blue) |
+| primary-foreground | `#FAFAFA` (White) | `#18181B` (Near Black) |
+| accent | `#E4EEFA` (Pale Blue) | `#19518B` (Navy Blue) |
 | accent-foreground | `#19518B` (Navy Blue) | `#FAFAFA` (White) |
-| ring | `#19518B` | `#529DDE` |
+| accent-border | `#C3DBF4` (Light Blue) | `#8EBFEB` (Medium Blue) |
 
-### Campus (Green) Theme
+### K-12 (Blue) Theme — placeholder
 | Token | Light Mode | Dark Mode |
 |-------|-----------|-----------|
-| primary | `#487537` (Forest Green) | `#84B771` (Light Green) |
-| accent | `#E8F4E4` (Pale Green) | `#3F6431` (Dark Green) |
-| accent-foreground | `#487537` (Forest Green) | `#FAFAFA` (White) |
-| ring | `#487537` | `#84B771` |
+| primary | `#19518B` (Navy Blue) | `#529DDE` (Light Blue) |
+| primary-foreground | `#FAFAFA` (White) | `#18181B` (Near Black) |
+| accent | `#E4EEFA` (Pale Blue) | `#19518B` (Navy Blue) |
+| accent-foreground | `#19518B` (Navy Blue) | `#FAFAFA` (White) |
+| accent-border | `#C3DBF4` (Light Blue) | `#8EBFEB` (Medium Blue) |
+
+> *K-12 values are identical to Higher Ed and will be updated with K-12-specific branding later.*
 
 ### Admin (Neutral) Theme
 | Token | Light Mode | Dark Mode |
 |-------|-----------|-----------|
 | primary | `#18181B` (Near Black) | `#E4E4E7` (Light Gray) |
+| primary-foreground | `#FAFAFA` (White) | `#18181B` (Near Black) |
 | accent | `#F4F4F5` (Very Light Gray) | `#3F3F46` (Medium Gray) |
 | accent-foreground | `#18181B` (Near Black) | `#FAFAFA` (White) |
-| ring | `#18181B` | `#E4E4E7` |
+| accent-border | `#E4E4E7` (Zinc 200) | `#D4D4D8` (Zinc 300) |
 
 ---
 
-## Primary Colors (Member Theme - Default)
+## Ring / Focus Colors (Shared Across All Themes)
+
+> [!NOTE]
+> Ring color now uses a **shared zinc neutral** across all themes, not the theme's primary color.
+
+| Token | Light Mode | Dark Mode | Usage |
+|-------|-----------|-----------|-------|
+| ring | `#A1A1AA` (Zinc 400) | `#71717A` (Zinc 500) | Focus ring on interactive elements |
+| sidebar-ring | `#A1A1AA` (Zinc 400) | `#52525B` (Zinc 600) | Focus ring in sidebar context |
+
+---
+
+## Chart Colors (Per-Theme Values)
+
+Chart colors vary by theme to ensure brand consistency in data visualizations.
+
+### Higher Ed & K-12 Chart Colors
+| Token | Light Mode | Dark Mode |
+|-------|-----------|-----------|
+| chart-1 | `#19518B` (Navy) | `#2C81CB` (Medium Blue) |
+| chart-2 | `#31B0CD` (Teal) | `#B1E6F0` (Light Teal) |
+| chart-3 | `#EC570A` (Orange) | `#FB7314` (Light Orange) |
+| chart-4 | `#A5240F` (Dark Red) | `#C8270D` (Red) |
+| chart-5 | `#E51853` (Cherry) | `#F93A68` (Light Cherry) |
+
+### Admin Chart Colors
+| Token | Light Mode | Dark Mode |
+|-------|-----------|-----------|
+| chart-1 | `#19518B` (Navy) | `#2C81CB` (Medium Blue) |
+| chart-2 | `#487537` (Green) | `#84B771` (Light Green) |
+| chart-3 | `#EC570A` (Orange) | `#FB7314` (Light Orange) |
+| chart-4 | `#A5240F` (Dark Red) | `#C8270D` (Red) |
+| chart-5 | `#E51853` (Cherry) | `#F93A68` (Light Cherry) |
+
+> **Note**: Admin chart-2 uses green (`#487537`) instead of teal, providing visual distinction from Higher Ed/K-12 charts.
+
+---
+
+## Sidebar Colors (Per-Theme Values)
+
+Sidebar tokens are used by the Sidebar component and adapt per theme.
+
+### Higher Ed & K-12 Sidebar Colors
+| Token | Light Mode | Dark Mode |
+|-------|-----------|-----------|
+| sidebar-background | `#FFFFFF` | `#18181B` |
+| sidebar-foreground | `#71717A` (Zinc 500) | `#FAFAFA` |
+| sidebar-primary | `#18181B` (Zinc 900) | `#19518B` (Navy) |
+| sidebar-primary-foreground | `#FAFAFA` | `#FAFAFA` |
+| sidebar-accent | `#E4EEFA` (Pale Blue) | `#27272A` (Zinc 800) |
+| sidebar-accent-foreground | `#19518B` (Navy) | `#FAFAFA` |
+| sidebar-border | `#E4E4E7` (Zinc 200) | `#3F3F46` (Zinc 700) |
+| sidebar-ring | `#A1A1AA` (Zinc 400) | `#52525B` (Zinc 600) |
+
+### Admin Sidebar Colors
+| Token | Light Mode | Dark Mode |
+|-------|-----------|-----------|
+| sidebar-background | `#FFFFFF` | `#18181B` |
+| sidebar-foreground | `#71717A` (Zinc 500) | `#FAFAFA` |
+| sidebar-primary | `#18181B` (Zinc 900) | `#19518B` (Navy) |
+| sidebar-primary-foreground | `#FAFAFA` | `#FAFAFA` |
+| sidebar-accent | `#F4F4F5` (Zinc 100) | `#27272A` (Zinc 800) |
+| sidebar-accent-foreground | `#18181B` (Zinc 900) | `#FAFAFA` |
+| sidebar-border | `#E4E4E7` (Zinc 200) | `#3F3F46` (Zinc 700) |
+| sidebar-ring | `#A1A1AA` (Zinc 400) | `#52525B` (Zinc 600) |
+
+---
+
+## Primary Colors (Higher Ed Theme - Default)
 
 | Token | CSS Variable | Light | Dark | Usage |
 |-------|--------------|-------|------|-------|
 | primary | `--base/primary` | **#19518b** | #529dde | Primary buttons bg, links, brand |
-| primary-foreground | `--base/primary-foreground` | **#fafafa** | #09090b | Text on primary backgrounds |
+| primary-foreground | `--base/primary-foreground` | **#fafafa** | #18181b | Text on primary backgrounds |
 
 **Primary Color: #19518b** (Deep blue - rgba(25, 81, 139, 1))
 
-**Note**: This is the **Member theme** primary color. Campus uses `#487537` (green), Admin uses `#18181B` (neutral). See [`themes.md`](./themes.md).
+**Note**: This is the **Higher Ed theme** primary color. K-12 currently shares this value. Admin uses `#18181B` (neutral). See [`themes.md`](./themes.md).
 
 ## Secondary Colors (VERIFIED FROM FIGMA)
 
@@ -90,7 +163,7 @@ These tokens change based on the active theme. All other tokens are shared acros
 
 | Token | CSS Variable | Light | Dark | Usage |
 |-------|--------------|-------|------|-------|
-| background | `--base/background` | #ffffff | **#09090b** | Page backgrounds |
+| background | `--base/background` | #fafafa | **#09090b** | Page backgrounds |
 | foreground | `--base/foreground` | **#09090b** | **#fafafa** | Primary text |
 | muted | `--base/muted` | **#f4f4f5** | **#27272a** | Muted backgrounds, table rows |
 | muted-foreground | `--base/muted-foreground` | **#71717a** | #a1a1aa | Secondary text, placeholders |
@@ -100,28 +173,30 @@ These tokens change based on the active theme. All other tokens are shared acros
 
 ## Accent Colors (Theme-Specific)
 
-| Token | Member (Blue) | Campus (Green) | Admin (Neutral) | Usage |
-|-------|--------------|----------------|-----------------|-------|
-| accent (light) | **#e4eefa** | **#e8f4e4** | **#f4f4f5** | Accent backgrounds |
-| accent (dark) | #1e3a5f | #3f6431 | #3f3f46 | Dark mode accents |
-| accent-foreground | #19518b | #487537 | #18181b | Text on accent backgrounds |
+| Token | Higher Ed (Blue) | K-12 (Blue) | Admin (Neutral) | Usage |
+|-------|-----------------|-------------|-----------------|-------|
+| accent (light) | **#e4eefa** | **#e4eefa** | **#f4f4f5** | Accent backgrounds |
+| accent (dark) | #19518b | #19518b | #3f3f46 | Dark mode accents |
+| accent-foreground | #19518b | #19518b | #18181b | Text on accent backgrounds |
+| accent-border (light) | #c3dbf4 | #c3dbf4 | #e4e4e7 | Accent-colored borders |
+| accent-border (dark) | #8ebfeb | #8ebfeb | #d4d4d8 | Dark mode accent borders |
 
 ## Focus/Ring Colors (VERIFIED FROM FIGMA)
 
 > [!NOTE]
-> Ring color uses `--ring` which maps to the theme's primary color.
-> Member: #19518b | Campus: #487537 | Admin: #18181b
+> Ring color uses `--ring` which now maps to a **shared zinc neutral** across all themes.
+> Light: #A1A1AA (Zinc 400) | Dark: #71717A (Zinc 500)
 
 | Token | CSS Variable | Value | Usage |
 |-------|--------------|-------|-------|
-| ring | `--custom/outline` | #19518b (3px spread) | Focus ring on interactive elements |
+| ring | `--custom/outline` | #A1A1AA (light) / #71717A (dark) | Focus ring on interactive elements |
 | focus-default | `focus/default` | 3px spread, 0 blur | Button focus state |
 
 ## Icon Stroke Colors (VERIFIED FROM FIGMA)
 
 > [!NOTE]
 > The Primary icon color adapts to the active theme's primary color.
-> Member: #19518b | Campus: #487537 | Admin: #18181b
+> Higher Ed/K-12: #19518b | Admin: #18181b
 
 | Color | Hex | RGB | Usage |
 |-------|-----|-----|-------|
@@ -132,9 +207,9 @@ These tokens change based on the active theme. All other tokens are shared acros
 ## Brand Color Scale
 
 > [!NOTE]
-> The brand scale below is for the **Member (Blue)** theme.
-> Campus and Admin themes do not have equivalent full brand scales —
-> they use their primary + accent colors directly.
+> The brand scale below is for the **Higher Ed (Blue)** theme.
+> K-12 currently shares this scale. Admin does not have an equivalent full brand scale —
+> it uses its primary + accent colors directly.
 
 | Token | Value | Usage |
 |-------|-------|-------|
@@ -157,8 +232,8 @@ These tokens change based on the active theme. All other tokens are shared acros
 | zinc-100 | #f4f4f5 | Light backgrounds (muted, secondary) |
 | zinc-200 | #e4e4e7 | Borders (light mode) |
 | zinc-300 | #d4d4d8 | Disabled states |
-| zinc-400 | #a1a1aa | Muted text (dark mode) |
-| zinc-500 | #71717a | Muted text (light mode) |
+| zinc-400 | #a1a1aa | Ring/focus (light mode), muted text (dark mode) |
+| zinc-500 | #71717a | Ring/focus (dark mode), muted text (light mode) |
 | zinc-600 | #52525b | Secondary text |
 | zinc-700 | #3f3f46 | Dark backgrounds |
 | zinc-800 | #27272a | Darker backgrounds (muted dark) |
@@ -179,23 +254,23 @@ These tokens change based on the active theme. All other tokens are shared acros
 
 > [!NOTE]
 > Button colors use semantic tokens that automatically adapt to the active theme.
-> The hex values shown below are for the **Member (Blue)** theme as reference.
+> The hex values shown below are for the **Higher Ed (Blue)** theme as reference.
 
 | Variant | Background | Text | Border |
 |---------|------------|------|--------|
-| Default | `bg-primary` (Member: #19518b) | `text-primary-foreground` (#fafafa) | none |
+| Default | `bg-primary` (Higher Ed: #19518b) | `text-primary-foreground` (#fafafa) | none |
 | Default (hover) | `bg-primary/90` | `text-primary-foreground` (#fafafa) | none |
 | Secondary | `bg-secondary` (#f4f4f5) | `text-secondary-foreground` (#18181b) | none |
 | Destructive | `bg-destructive` (#dc2626) | `text-destructive-foreground` (#fef2f2) | none |
-| Outline | `bg-transparent` | `text-primary` (Member: #19518b) | `border` (#e4e4e7) |
-| Ghost | `bg-transparent` | `text-primary` (Member: #19518b) | none |
-| Link | `bg-transparent` | `text-primary` (Member: #19518b) | none |
+| Outline | `bg-transparent` | `text-primary` (Higher Ed: #19518b) | `border` (#e4e4e7) |
+| Ghost | `bg-transparent` | `text-primary` (Higher Ed: #19518b) | none |
+| Link | `bg-transparent` | `text-primary` (Higher Ed: #19518b) | none |
 
 ## CSS Custom Properties
 
 ```css
 :root {
-  /* Primary - Brand Blue */
+  /* Primary - Brand Blue (Higher Ed default) */
   --primary: 210 65% 32%;  /* #19518b */
   --primary-foreground: 0 0% 98%;  /* #fafafa */
   
@@ -208,17 +283,18 @@ These tokens change based on the active theme. All other tokens are shared acros
   --destructive-foreground: 0 86% 97%;  /* #fef2f2 */
   
   /* Base */
-  --background: 0 0% 100%;
+  --background: 0 0% 98%;  /* #fafafa */
   --foreground: 240 10% 3.9%;  /* #09090b */
   --muted: 240 4.8% 95.9%;  /* #f4f4f5 */
   --muted-foreground: 240 3.8% 46.1%;  /* #71717a */
   --border: 240 5.9% 90%;  /* #e4e4e7 */
   --input: 240 5.9% 90%;
-  --ring: 210 65% 32%;  /* #19518b */
+  --ring: 240 4% 65%;  /* #a1a1aa */
   
-  /* Accent - Light blue */
+  /* Accent - Light blue (Higher Ed) */
   --accent: 214 65% 94%;  /* #e4eefa */
   --accent-foreground: 210 65% 32%;  /* #19518b */
+  --accent-border: 214 60% 87%;  /* #c3dbf4 */
   
   /* Card */
   --card: 0 0% 100%;
@@ -235,7 +311,7 @@ These tokens change based on the active theme. All other tokens are shared acros
 .dark {
   /* Primary - Lighter blue for dark mode */
   --primary: 207 67% 60%;  /* #529dde */
-  --primary-foreground: 240 10% 3.9%;  /* #09090b */
+  --primary-foreground: 240 6% 10%;  /* #18181b */
   
   /* Secondary */
   --secondary: 240 3.7% 15.9%;  /* #27272a */
@@ -252,11 +328,12 @@ These tokens change based on the active theme. All other tokens are shared acros
   --muted-foreground: 240 5% 64.9%;
   --border: 0 0% 100% / 0.1;  /* rgba(255,255,255,0.1) */
   --input: 240 3.7% 15.9%;
-  --ring: 207 67% 60%;  /* #529dde */
+  --ring: 240 4% 46%;  /* #71717a */
   
   /* Accent */
-  --accent: 210 50% 25%;  /* #1e3a5f */
+  --accent: 210 65% 32%;  /* #19518b */
   --accent-foreground: 0 0% 98%;
+  --accent-border: 207 55% 74%;  /* #8ebfeb */
   
   /* Card */
   --card: 240 10% 3.9%;
@@ -297,6 +374,7 @@ module.exports = {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
+          border: 'hsl(var(--accent-border))',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -308,6 +386,23 @@ module.exports = {
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
+        },
+        chart: {
+          1: 'hsl(var(--chart-1))',
+          2: 'hsl(var(--chart-2))',
+          3: 'hsl(var(--chart-3))',
+          4: 'hsl(var(--chart-4))',
+          5: 'hsl(var(--chart-5))',
+        },
+        sidebar: {
+          DEFAULT: 'hsl(var(--sidebar-background))',
+          foreground: 'hsl(var(--sidebar-foreground))',
+          primary: 'hsl(var(--sidebar-primary))',
+          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+          accent: 'hsl(var(--sidebar-accent))',
+          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+          border: 'hsl(var(--sidebar-border))',
+          ring: 'hsl(var(--sidebar-ring))',
         },
       },
     },
@@ -323,5 +418,5 @@ module.exports = {
 - [Shadows](./shadows.md) — Elevation and border styles
 
 ---
-*Last extracted: December 16, 2025*
-*Source: ShadcnDesign UI Kit - Button page*
+*Last updated: February 13, 2026*
+*Source: Figma Design System - TimelyCare Kit*

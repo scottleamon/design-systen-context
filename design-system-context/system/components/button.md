@@ -1,8 +1,8 @@
 # Button
 
 > [!NOTE]
-> **Theme-Aware Component**: Button colors adapt to the active theme (Member/Campus/Admin).
-> The `default` variant uses `bg-primary` which will be navy in Member, green in Campus, and neutral in Admin.
+> **Theme-Aware Component**: Button colors adapt to the active theme (Higher Ed/K-12/Admin).
+> The `default` variant uses `bg-primary` which will be navy in Higher Ed/K-12 and neutral in Admin.
 > Always use semantic variants, not hard-coded colors.
 
 ## Import
@@ -26,7 +26,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 | Variant | Background | Text Color | Border | Shadow | Theme Behavior |
 |---------|------------|------------|--------|--------|----------------|
-| `default` | `bg-primary` | `text-primary-foreground` | none | `shadow-xs` | Navy (Member), Green (Campus), Black (Admin) |
+| `default` | `bg-primary` | `text-primary-foreground` | none | `shadow-xs` | Navy (Higher Ed/K-12), Black (Admin) |
 | `secondary` | `bg-secondary` | `text-secondary-foreground` | none | `shadow-xs` | Same across themes |
 | `destructive` | `bg-destructive` | `text-destructive-foreground` | none | `shadow-xs` | Red across all themes |
 | `outline` | `bg-transparent` | `text-primary` | `border border-border` | `shadow-xs` | Border color adapts to theme |

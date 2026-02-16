@@ -36,13 +36,13 @@ Before starting any task, understand:
 - Is this migration/refactoring?
 
 ### What's the Context?
-- Which theme/property? (Member/Campus/Admin)
+- Which theme/property? (Higher Ed/K-12/Admin)
 - What's the scope? (component, feature, page)
 - Are there existing patterns to follow?
 
 ### Key Questions to Clarify
 If any of these are unclear, ask:
-- "Which property is this for? (Member/Campus/Admin)"
+- "Which property is this for? (Higher Ed/K-12/Admin)"
 - "Is there an existing Figma design?"
 - "Should this be production-ready or a prototype?"
 
