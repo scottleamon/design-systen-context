@@ -36,8 +36,8 @@ export default async function Sidebar() {
                         <Sparkles className="size-4 text-white" />
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-[15px] font-semibold tracking-tight text-[hsl(var(--foreground))]">DC&C Hub</span>
-                        <span className="text-[11px] text-[hsl(var(--sidebar-text-muted))] leading-none">Design System</span>
+                        <span className="text-[14px] font-semibold tracking-tight text-[hsl(var(--foreground))] leading-tight">Design System</span>
+                        <span className="text-[11px] text-[hsl(var(--sidebar-text-muted))] leading-none">TimelyCare</span>
                     </div>
                 </Link>
             </div>
