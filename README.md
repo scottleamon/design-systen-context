@@ -1,13 +1,13 @@
-# Design System Workbench
+# Design Components & Context Hub
 
-This project is a preview and workbench environment for the Design System context.
+This project is the Design Components & Context Hub for the TimelyCare Design System.
 
 ## Design Context
 The "Source of Truth" for design rules, tokens, and components is located in the [**`.design-system-context/`**](./.design-system-context/) folder. 
 
 This folder is self-contained and can be shared across different project repositories to maintain a consistent AI context.
 
-## Workbench Features
+## Features
 - **Documentation Viewer**: Renders the markdown files from the context folder.
 - **Component Preview**: (Internal) testing ground for design system implementations.
 

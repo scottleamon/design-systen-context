@@ -2,51 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light mode (default) */
-:root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
-  --radius: 0.625rem;
+/* ─── Design System Token CSS Custom Properties ──────────
+ * Source of truth: design-system-context/system/tokens/tokens.json
+ * These use a --ds- prefix to avoid collisions with the workbench's
+ * own CSS variables. Scoped to .ds-theme-* classes on the preview panel.
+ * ──────────────────────────────────────────────────────── */
+
+/* Shared Tokens (same across all themes) */
+.ds-theme-higher-ed,
+.ds-theme-k12,
+.ds-theme-admin {
+  --ds-background: #FAFAFA;
+  --ds-foreground: #09090B;
+  --ds-secondary: #F4F4F5;
+  --ds-secondary-foreground: #18181B;
+  --ds-destructive: #DC2626;
+  --ds-destructive-foreground: #FEF2F2;
+  --ds-muted: #F4F4F5;
+  --ds-muted-foreground: #71717A;
+  --ds-border: #E4E4E7;
+  --ds-input: #E4E4E7;
+  --ds-card: #FFFFFF;
+  --ds-card-foreground: #09090B;
+  --ds-popover: #FFFFFF;
+  --ds-popover-foreground: #09090B;
+  --ds-font-sans: 'Adelle Sans', ui-sans-serif, system-ui, sans-serif;
+  --ds-font-mono: 'Adelle Mono', ui-monospace, monospace;
+  --ds-radius-none: 0px;
+  --ds-radius-sm: 6px;
+  --ds-radius: 8px;
+  --ds-radius-md: 8px;
+  --ds-radius-lg: 10px;
+  --ds-radius-xl: 14px;
+  --ds-radius-2xl: 16px;
+  --ds-radius-3xl: 24px;
+  --ds-radius-full: 9999px;
+  --ds-shadow-none: none;
+  --ds-shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ds-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ds-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --ds-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ds-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ds-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --ds-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --ds-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --ds-success: #16a34a;
+  --ds-success-foreground: #FFFFFF;
+  --ds-warning: #f59e0b;
+  --ds-warning-foreground: #FFFFFF;
 }
 
-/* Dark mode */
+/* Higher Ed Theme (Blue) */
+.ds-theme-higher-ed {
+  --ds-primary: #19518B;
+  --ds-primary-foreground: #FAFAFA;
+  --ds-accent: #E4EEFA;
+  --ds-accent-foreground: #19518B;
+  --ds-accent-border: #C3DBF4;
+  --ds-ring: #A1A1AA;
+}
+
+/* K-12 Theme (Blue — placeholder, same as Higher Ed) */
+.ds-theme-k12 {
+  --ds-primary: #19518B;
+  --ds-primary-foreground: #FAFAFA;
+  --ds-accent: #E4EEFA;
+  --ds-accent-foreground: #19518B;
+  --ds-accent-border: #C3DBF4;
+  --ds-ring: #A1A1AA;
+}
+
+/* Admin Theme (Neutral) */
+.ds-theme-admin {
+  --ds-primary: #18181B;
+  --ds-primary-foreground: #FAFAFA;
+  --ds-accent: #F4F4F5;
+  --ds-accent-foreground: #18181B;
+  --ds-accent-border: #E4E4E7;
+  --ds-ring: #A1A1AA;
+}
+
+/* Light mode (default) — warm neutral palette */
+:root {
+  --background: 40 20% 99%;
+  --foreground: 20 14% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14% 10%;
+  --primary: 215 72% 40%;
+  --primary-foreground: 0 0% 99%;
+  --secondary: 30 12% 95%;
+  --secondary-foreground: 20 14% 10%;
+  --muted: 30 10% 95%;
+  --muted-foreground: 20 6% 44%;
+  --accent: 215 72% 96%;
+  --accent-foreground: 215 72% 40%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 30 10% 90%;
+  --input: 30 10% 90%;
+  --ring: 215 72% 40%;
+  --radius: 0.625rem;
+
+  /* Sidebar-specific tokens */
+  --sidebar-bg: 30 16% 96.5%;
+  --sidebar-border: 30 12% 89%;
+  --sidebar-text: 20 12% 28%;
+  --sidebar-text-muted: 20 6% 48%;
+  --sidebar-hover: 215 60% 95%;
+  --sidebar-active: 215 72% 40%;
+  --sidebar-active-text: 0 0% 100%;
+}
+
+/* Dark mode — warm dark palette */
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
+  --background: 20 10% 6%;
+  --foreground: 30 10% 92%;
+  --card: 20 8% 9%;
+  --card-foreground: 30 10% 92%;
+  --popover: 20 8% 9%;
+  --popover-foreground: 30 10% 92%;
+  --primary: 215 72% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 20 6% 14%;
+  --secondary-foreground: 30 10% 92%;
+  --muted: 20 6% 14%;
+  --muted-foreground: 30 6% 55%;
+  --accent: 215 50% 14%;
+  --accent-foreground: 215 72% 65%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
+  --border: 20 6% 16%;
+  --input: 20 6% 16%;
+  --ring: 215 72% 55%;
+
+  /* Sidebar-specific tokens */
+  --sidebar-bg: 20 8% 7%;
+  --sidebar-border: 20 6% 14%;
+  --sidebar-text: 30 8% 72%;
+  --sidebar-text-muted: 30 6% 48%;
+  --sidebar-hover: 215 50% 12%;
+  --sidebar-active: 215 72% 55%;
+  --sidebar-active-text: 0 0% 100%;
 }
 
 /* ─── Base ────────────────────────────────────────────── */
@@ -57,6 +155,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  letter-spacing: -0.011em;
+}
+
+/* ─── Sidebar chrome ─────────────────────────────────── */
+
+.sidebar-chrome {
+  background-color: hsl(var(--sidebar-bg));
+  border-color: hsl(var(--sidebar-border));
+}
+
+.sidebar-nav-item {
+  color: hsl(var(--sidebar-text));
+  transition: all 0.15s ease;
+}
+
+.sidebar-nav-item:hover {
+  color: hsl(var(--accent-foreground));
+  background-color: hsl(var(--sidebar-hover));
+}
+
+.sidebar-section-label {
+  color: hsl(var(--sidebar-text-muted));
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 /* ─── Scrollbar ───────────────────────────────────────── */
@@ -141,18 +265,13 @@ body {
   color: hsl(var(--foreground));
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: hsl(217 91% 60% / 0.3);
+  text-decoration-color: hsl(var(--ring) / 0.3);
   transition: all 0.15s;
 }
 
 .prose a:hover {
-  color: hsl(217 91% 50%);
-  text-decoration-color: hsl(217 91% 50% / 0.5);
-}
-
-.dark .prose a:hover {
-  color: hsl(217 91% 65%);
-  text-decoration-color: hsl(217 91% 65% / 0.5);
+  color: hsl(var(--ring));
+  text-decoration-color: hsl(var(--ring) / 0.5);
 }
 
 /* Strong & emphasis */
@@ -184,7 +303,7 @@ body {
 }
 
 .dark .prose pre {
-  background: hsl(0 0% 4%);
+  background: hsl(20 8% 5%);
   border-color: hsl(var(--border));
 }
 
@@ -199,7 +318,7 @@ body {
 }
 
 .dark .prose pre code {
-  color: hsl(0 0% 85%);
+  color: hsl(30 8% 82%);
 }
 
 /* Lists */
@@ -277,17 +396,17 @@ body {
 
 /* Blockquotes */
 .prose blockquote {
-  border-left: 2px solid hsl(217 91% 60% / 0.4);
+  border-left: 2px solid hsl(var(--ring) / 0.4);
   padding: 1rem 1.5rem;
   margin: 1.75rem 0;
   border-radius: 0 8px 8px 0;
   color: hsl(var(--foreground) / 0.85);
-  background: hsl(217 91% 60% / 0.04);
+  background: hsl(var(--ring) / 0.04);
 }
 
 .dark .prose blockquote {
-  border-left-color: hsl(217 91% 60% / 0.3);
-  background: hsl(217 91% 60% / 0.05);
+  border-left-color: hsl(var(--ring) / 0.3);
+  background: hsl(var(--ring) / 0.05);
 }
 
 .prose blockquote p:last-child {
