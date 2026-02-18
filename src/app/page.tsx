@@ -85,8 +85,7 @@ export default function Home() {
                         <span className="text-[hsl(var(--muted-foreground))]">Experience Design System</span>
                     </h1>
                     <p className="text-[15px] text-[hsl(var(--muted-foreground))] max-w-xl leading-relaxed">
-                        Internal documentation and component reference for building TimelyCare applications. 
-                        The single source of truth for AI agents and developers.
+                        The design system lives in markdown. This is the front-end to read it — structured for humans, readable by machines. Every page is a file; every file is the source of truth for developers and AI agents building TimelyCare products.
                     </p>
                 </header>
 
