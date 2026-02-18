@@ -1,6 +1,6 @@
-# Design Components & Context Hub
+# Helix — TimelyCare's Experience Design System
 
-This project is the Design Components & Context Hub for the TimelyCare Design System.
+This project is the documentation and component hub for Helix, TimelyCare's Experience Design System.
 
 ## Design Context
 The "Source of Truth" for design rules, tokens, and components is located in the [**`.design-system-context/`**](./.design-system-context/) folder. 

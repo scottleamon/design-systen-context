@@ -78,11 +78,11 @@ export default function Home() {
                 <header className="mb-14">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-500/10 mb-5">
                         <div className="size-1.5 rounded-full bg-blue-500 animate-pulse" />
-                        <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 tracking-wide">TimelyCare Design System</span>
+                        <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 tracking-wide">TimelyCare Experience Design System</span>
                     </div>
                     <h1 className="text-[2rem] font-bold tracking-tight mb-3 leading-tight">
-                        Design Components<br />
-                        <span className="text-[hsl(var(--muted-foreground))]">& Context Hub</span>
+                        Helix<br />
+                        <span className="text-[hsl(var(--muted-foreground))]">Experience Design System</span>
                     </h1>
                     <p className="text-[15px] text-[hsl(var(--muted-foreground))] max-w-xl leading-relaxed">
                         Internal documentation and component reference for building TimelyCare applications. 

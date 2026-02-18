@@ -4,6 +4,8 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
+/* Inter is kept as a CSS variable fallback for when Adobe Fonts (adelle-sans)
+   are not yet loaded. The font-family stack in globals.css prefers adelle-sans. */
 const inter = Inter({
     subsets: ["latin"],
     variable: '--font-inter',
@@ -21,7 +23,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${inter.variable} font-sans antialiased min-h-screen flex selection:bg-blue-500/15`}>
+            {/* Adobe Fonts (Typekit) — replace YOUR_KIT_ID with your project embed ID */}
+            {/* <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css" /> */}
+            <body className={`${inter.variable} font-sans antialiased min-h-screen flex selection:bg-primary/10`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"

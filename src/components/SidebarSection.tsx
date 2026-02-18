@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import {
     ChevronRight,
     ChevronDown,
@@ -40,6 +41,7 @@ interface SidebarSectionProps {
 }
 
 export default function SidebarSection({ category, docs, defaultOpen = false }: SidebarSectionProps) {
+    const pathname = usePathname()
     const [isOpen, setIsOpen] = useState(defaultOpen)
     const Icon = iconsMap[category] || BookOpen
 
@@ -71,16 +73,21 @@ export default function SidebarSection({ category, docs, defaultOpen = false }: 
                 }`}
             >
                 <div className="space-y-0.5 pt-1 pb-1">
-                    {docs.map((doc) => (
-                        <Link
-                            key={doc.slug}
-                            href={`/docs/${category}/${doc.slug}`}
-                            className="sidebar-nav-item group flex items-center justify-between pl-10 pr-3 py-[7px] text-[13px] rounded-lg"
-                        >
-                            <span className="truncate">{doc.title}</span>
-                            <ChevronRight className="size-3 opacity-0 group-hover:opacity-30 -translate-x-1 group-hover:translate-x-0 transition-all shrink-0" />
-                        </Link>
-                    ))}
+                    {docs.map((doc) => {
+                        const href = `/docs/${category}/${doc.slug}`
+                        const isActive = pathname === href
+                        return (
+                            <Link
+                                key={doc.slug}
+                                href={href}
+                                aria-current={isActive ? "page" : undefined}
+                                className={`sidebar-nav-item group flex items-center justify-between pl-10 pr-3 py-[7px] text-[13px] rounded-lg ${isActive ? "active" : ""}`}
+                            >
+                                <span className="truncate">{doc.title}</span>
+                                <ChevronRight className={`size-3 -translate-x-1 transition-all shrink-0 ${isActive ? "opacity-30" : "opacity-0 group-hover:opacity-30 group-hover:translate-x-0"}`} />
+                            </Link>
+                        )
+                    })}
                 </div>
             </div>
         </div>

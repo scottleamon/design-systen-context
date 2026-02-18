@@ -32,12 +32,12 @@ export default async function Sidebar() {
             {/* Brand header */}
             <div className="px-5 pt-5 pb-4">
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="size-9 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-[1.02] transition-all">
-                        <Sparkles className="size-4 text-white" />
+                    <div className="size-9 bg-gradient-to-br from-tc-navy to-tc-navy/85 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-[1.02] transition-all">
+                        <Sparkles className="size-4 text-coral" />
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-[14px] font-semibold tracking-tight text-[hsl(var(--foreground))] leading-tight">Design System</span>
-                        <span className="text-[11px] text-[hsl(var(--sidebar-text-muted))] leading-none">TimelyCare</span>
+                        <span className="text-[14px] font-semibold tracking-tight text-[hsl(var(--foreground))] leading-tight">Helix</span>
+                        <span className="text-[11px] text-[hsl(var(--sidebar-text-muted))] leading-none">TimelyCare Experience Design System</span>
                     </div>
                 </Link>
             </div>

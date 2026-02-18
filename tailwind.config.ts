@@ -14,13 +14,59 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            fontFamily: {
-                sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
-                "ds-sans": ["var(--ds-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
-                "ds-mono": ["var(--ds-font-mono)", "ui-monospace", "monospace"],
+        fontFamily: {
+            sans: ['"adelle-sans"', "var(--font-inter)", "ui-sans-serif", "system-ui"],
+            mono: ['"adelle-mono"', "ui-monospace", "monospace"],
+            display: ['"adelle-condensed"', "ui-sans-serif", "sans-serif"],
+            "ds-sans": ["var(--ds-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+            "ds-mono": ["var(--ds-font-mono)", "ui-monospace", "monospace"],
+        },
+        colors: {
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            border: "hsl(var(--border))",
+            input: "hsl(var(--input))",
+            ring: "hsl(var(--ring))",
+            primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
             },
-            colors: {
-                "ds-primary": {
+            secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+            },
+            muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+            },
+            accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+            },
+            destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+            },
+            card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+            },
+            popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+            },
+            /* Brand palette */
+            "tc-navy": "#0B2341",
+            "cherry": "#E31C5F",
+            "coral": "#F26A4B",
+            "tc-blue": "#36B4E5",
+            "tangerine": "#FF9A4D",
+            "taupe": "#BBA888",
+            "brick-red": "#6B1019",
+            "warm-cream": "#D5CBBE",
+            "light-sand": "#F0E4DA",
+            "tc-grey": "#58595B",
+            "ds-primary": {
                     DEFAULT: "var(--ds-primary)",
                     foreground: "var(--ds-primary-foreground)",
                 },

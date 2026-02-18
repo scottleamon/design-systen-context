@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 
-const CONTEXT_DIR = path.join(process.cwd(), "design-system-context")
+const CONTEXT_DIR = path.join(process.cwd(), ".design-system-context")
 const SYSTEM_DIR = path.join(CONTEXT_DIR, "system")
 
 export interface DocMetadata {
